@@ -3,6 +3,7 @@ const express = require('express'),
       session = require('express-session'),
       massive = require('massive'),
       auth_ctrl = require('./controllers/auth_controllers')
+      ranch_ctrl = require('./controllers/ranch_controllers')
 const app = express()
 const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 
@@ -27,3 +28,8 @@ app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/user', auth_ctrl.getUser)
 app.get('/auth/logout', auth_ctrl.logout)
 app.get('/auth/details', auth_ctrl.getDetails)
+
+app.post('/api/addCow', ranch_ctrl.addCow)
+app.delete('/api/cow/:cowId', ranch_ctrl.removeCow)
+app.get('/api/cows', ranch_ctrl.getAllCows)
+app.put('/api/editCow', ranch_ctrl.editCow)
