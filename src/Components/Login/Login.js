@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 // import {connect} from 'react-redux'
 
 import LoginForm from './LoginForm'
+import RegisterForm from './RegisterForm'
 
 
 class Login extends Component {
@@ -12,6 +13,8 @@ class Login extends Component {
     return(
       <div>
         <LoginForm/>
+        <RegisterForm/>
+        
       </div>
     )
   }

@@ -24,7 +24,7 @@ module.exports = {
     const db = req.app.get('db')
     const  { session } = req
     const userFound = await db.check_user_email({email})
-    if(!userFound[0]) return res.status(401).send('That user does not exist')
+    if(!userFound[0]) return res.status(401).send('That user does not exist') 
     const authenticated = bcrypt.compareSync(password, userFound[0].password)
     if(authenticated){
       session.user = {id: userFound[0].id, firstName:userFound[0].first_name }

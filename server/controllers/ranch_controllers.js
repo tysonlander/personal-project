@@ -32,7 +32,16 @@ module.exports = {
       if(error) throw error;
     })
   },
-  editCow: (req, res) => {
-    const 
+  updateCow: (req, res) => {
+    const {cowId} = req.params;
+    const {rfid, breed, gender, purchasePrice} = req.body
+    const db = req.app.get('db')
+    db.edit_cow({rfid, breed, gender, purchasePrice, cowId})
+      .then(dbResponse => {
+        res.status(200).send(dbResponse);
+      })
+      .catch(error => {
+        if(error) throw error
+      })
   }
 }
