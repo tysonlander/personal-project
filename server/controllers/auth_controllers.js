@@ -16,7 +16,13 @@ module.exports = {
       email,
       password: hash
     })
-    session.user = {id: createdUser[0].id, userFirst: createdUser[0].first_name}
+    session.user = {
+      id: createdUser[0].id, 
+      firstName: createdUser[0].first_name,
+      lastName: createdUser[0].last_name,
+      ranch: createdUser[0].ranch,
+      email: createdUser[0].email
+    }
     res.status(200).send(session.user)
   },
   login: async (req, res) => {
@@ -27,7 +33,13 @@ module.exports = {
     if(!userFound[0]) return res.status(401).send('That user does not exist') 
     const authenticated = bcrypt.compareSync(password, userFound[0].password)
     if(authenticated){
-      session.user = {id: userFound[0].id, firstName:userFound[0].first_name }
+      session.user = {
+        id: userFound[0].id, 
+        firstName:userFound[0].first_name,
+        lastName: userFound[0].last_name,
+        ranch: userFound[0].ranch,
+        email: userFound[0].email
+       }
       res.status(200).send(session.user)
     } else{
       return res.status(401).send('Whoa there cowboy! Please try a different email or password')
