@@ -10,7 +10,7 @@ const UPDATE_USER = 'UPDATE_USER'
 const CLEAR_USER = 'CLEAR_USER'
 
 export function updateUser(user) {
-  console.log(' user reducer console:', user)
+  // console.log(' user reducer console:', user)
   return {
     type: UPDATE_USER,
     payload: user

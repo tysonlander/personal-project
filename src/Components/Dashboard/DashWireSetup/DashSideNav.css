@@ -1,0 +1,7 @@
+.dash-side-nav {
+  background:lightgray;
+  width: 15vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
