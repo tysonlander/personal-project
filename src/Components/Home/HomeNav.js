@@ -6,7 +6,7 @@ const HomeNav = () => {
   return(
     <nav>
       <Link to='/'>Home</Link>
-      <Link to='/login'>Login</Link>
+      <button><Link to='/login'>Login</Link></button>
     </nav>
   )
 }

@@ -31,5 +31,5 @@ app.get('/auth/details', auth_ctrl.getDetails)
 
 app.post('/api/addCow', ranch_ctrl.addCow)
 app.delete('/api/cow/:cowId', ranch_ctrl.removeCow)
-app.get('/api/cows', ranch_ctrl.getAllCows)
+app.post('/api/cows', ranch_ctrl.getAllCows) // get all cows from one owner
 app.put('/api/editCow/:cowId', ranch_ctrl.updateCow)

@@ -7,6 +7,7 @@ export default () => {
     <nav className='dash-side-nav'>
       <Link to='/dashboard/'>Dashboard</Link>
       <Link to='/dashboard/AddToHerd'>Add To Herd</Link>
+      <Link to='/dashboard/HerdManagement'>Manage Herd</Link>
     </nav>
   )
 }
