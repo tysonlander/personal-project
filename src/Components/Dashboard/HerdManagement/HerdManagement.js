@@ -38,7 +38,6 @@ handleRopeCows = () => {
     })
 
 /////////////////////////////////////// can probably remove the below
-    console.log("cows on state:", this.state.cows)
 
     return(
       <div>
@@ -65,7 +64,9 @@ handleRopeCows = () => {
 }
 
 function mapStateToProps(reduxState) {
-  return reduxState
+  return {
+    id: reduxState.user.id
+  }
 }
 
 export default connect(mapStateToProps)(HerdManagement)

@@ -23,8 +23,8 @@ class AddToHerd extends Component{
     axios
       .post('/api/addCow', {ownerId, rfid, breed, gender, purchasePrice, location})
       .then((res) => {
-        this.props.updateNewCow(res.data)
-        this.props.history.push('/dashboard')
+        this.props.updateNewCow(res.data[0])
+        this.props.history.push('/dashboard/AddToHerdConfirm')
       })
       .catch((err) => {
         console.log(err)
@@ -55,7 +55,7 @@ class AddToHerd extends Component{
           <hr></hr>
         </div>
       
-      <h1>Let's bring 'em into the pasture!</h1>
+      <h1>Put 'em in the pasture.</h1>
 
       <form onSubmit={this.handleAddCow}>
         <input

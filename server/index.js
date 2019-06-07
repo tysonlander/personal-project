@@ -29,7 +29,7 @@ app.get('/auth/user', auth_ctrl.getUser)
 app.get('/auth/logout', auth_ctrl.logout)
 app.get('/auth/details', auth_ctrl.getDetails)
 
-app.post('/api/addCow', ranch_ctrl.addCow)
+app.post('/api/addCow', ranch_ctrl.addCow) // add a cow to an owners herd
 app.delete('/api/cow/:cowId', ranch_ctrl.removeCow)
 app.post('/api/cows', ranch_ctrl.getAllCows) // get all cows from one owner
 app.put('/api/editCow/:cowId', ranch_ctrl.updateCow)

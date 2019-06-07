@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-
+import QuickActions from './QuickActions'
 
 class DashHome extends Component{
   constructor() {
@@ -33,7 +33,9 @@ class DashHome extends Component{
     return(
     <>
       <h1>{this.state.greeting}, Farmer {this.props.firstName}</h1>
+      <QuickActions/>
     </>
+
     )
   }
 }

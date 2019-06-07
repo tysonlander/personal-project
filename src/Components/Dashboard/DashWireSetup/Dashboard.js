@@ -8,7 +8,9 @@ import './Dashboard.css'
 
 class Dashboard extends Component{
 
-  
+  componentDidMount(){
+    
+  }
   
   render(){
     return(
