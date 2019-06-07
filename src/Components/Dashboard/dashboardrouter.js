@@ -5,6 +5,7 @@ import AddToHerd from './AddToHerd/AddToHerd'
 import DashHome from './DashHome/DashHome'
 import HerdManagement from './HerdManagement/HerdManagement'
 import AddCowConfirm from './AddToHerd/AddCowConfirm'
+import Reports from './Reports/Reports'
 
 
 export default (
@@ -13,5 +14,6 @@ export default (
    <Route path='/dashboard/AddToHerd' component={AddToHerd}/>
    <Route path='/dashboard/AddToHerdConfirm' component={AddCowConfirm}/>
    <Route path='/dashboard/HerdManagement' component={HerdManagement}/>
+   <Route path='/dashboard/Reports' component={Reports}/>
  </Switch>
 )

@@ -1,15 +1,28 @@
 import React, {Component} from 'react'
+import axios from 'axios';
+import {updateUser} from '../../../redux/userReducer'
+import {connect} from 'react-redux'
+import './Dashboard.css'
+
 import DashNav from './DashTopNav'
 import dashboardrouter from '../dashboardrouter'
 import DashSideNav from './DashSideNav'
-import './Dashboard.css'
 
 
 
 class Dashboard extends Component{
 
   componentDidMount(){
-    
+    axios
+    .get('/auth/user')
+    .then((res) => {
+      console.log(res.data)
+      //then sends the res data to the state on refresh of the page
+      this.props.updateUser(res.data) 
+    })
+    .catch((err) =>
+      {this.props.history.push('/')}
+    )
   }
   
   render(){
@@ -28,6 +41,8 @@ class Dashboard extends Component{
   }
 }
 
+function mapStateToProps(reduxState){
+  return reduxState
+}
 
-
-export default Dashboard
+export default connect(mapStateToProps, {updateUser})(Dashboard)

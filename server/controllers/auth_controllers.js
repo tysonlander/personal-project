@@ -47,7 +47,7 @@ module.exports = {
   },
   getUser: (req, res) => {
     const {session} = req
-    if (session.user){
+    if (session.user){ 
       return res.status(200).send(session.user)
     }
   },
