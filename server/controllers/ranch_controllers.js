@@ -1,8 +1,8 @@
 module.exports = {
   addCow: (req, res) => {
-    const {ownerId, rfid, breed, gender, purchasePrice} = req.body
+    const {ownerId, rfid, breed, gender, purchasePrice, location} = req.body
     const db = req.app.get('db')
-    db.add_cow({ownerId, rfid, breed, gender, purchasePrice})
+    db.add_cow({ownerId, rfid, breed, gender, purchasePrice, location})
       .then(dbResponse => {
         res.status(200).send(dbResponse);
       })

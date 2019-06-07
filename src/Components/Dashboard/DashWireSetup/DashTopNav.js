@@ -40,9 +40,9 @@ class DashTopNav extends Component {
 
 function mapStateToProps(reduxState){
   return {
-    firstName: reduxState.firstName,
-    lastName: reduxState.lastName,
-    ranch: reduxState.ranch,
+    firstName: reduxState.user.firstName,
+    lastName: reduxState.user.lastName,
+    ranch: reduxState.user.ranch,
   }
 }
 

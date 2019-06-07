@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import {connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 import axios from 'axios';
-import HerdToDisplay from './HerdToDisplay'
+import CowTableRow from './CowTableRow'
+
 
 class HerdManagement extends Component {
   constructor(){
@@ -10,8 +12,6 @@ class HerdManagement extends Component {
       cows: []
     }
   }
-  
-  
 
 componentDidMount(){
   this.handleRopeCows()
@@ -25,22 +25,39 @@ handleRopeCows = () => {
     })
   })
 }
+
+
   
   render(){
-    console.log("cows on state:", this.state.cows)
-    const mappedCows = this.state.cows.map((element, i) => {
-      return (
-        <HerdToDisplay
-          key={i}
-          cow={element}
+    let cowList = this.state.cows.map((element, index) => {
+      return(
+        <CowTableRow cowItem={element}
+          key={index}
         />
       )
     })
 
+/////////////////////////////////////// can probably remove the below
+    console.log("cows on state:", this.state.cows)
+
     return(
       <div>
         <h1>Manage Herd</h1>
-        {mappedCows}
+        <button><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        {/* {mappedCows} */}
+
+        <table>
+          <thead>
+            <tr>
+              <th>RFID</th>
+              <th>Breed</th>
+            </tr>
+          </thead>
+          <tbody>
+              {cowList}
+          </tbody>
+        </table>
+        
       </div>
       
       )

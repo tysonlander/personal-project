@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
+
 class DashHome extends Component{
   constructor() {
     super()
@@ -39,7 +40,7 @@ class DashHome extends Component{
 
 function mapStateToProps(reduxState){
   return{
-    firstName: reduxState.firstName
+    firstName: reduxState.user.firstName
   }
 }
 
