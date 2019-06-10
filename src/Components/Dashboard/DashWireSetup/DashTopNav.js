@@ -35,7 +35,7 @@ class DashTopNav extends Component {
     return(
     <div className='dash-top-nav'>
       <h1>Moola</h1>
-      <h1>We Heart {this.props.ranch}</h1>
+      <h1>We <Icon.Heart size={25}/> {this.props.ranch}</h1>
       <h1>{this.props.firstName} {this.props.lastName}</h1>
       <Icon.User size={30} onClick={this.handleDropDown}/>
       

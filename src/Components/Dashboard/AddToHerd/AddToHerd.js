@@ -88,6 +88,8 @@ class AddToHerd extends Component{
           placeholder='location'
           onChange={this.handleCowDetailUpdate}
         />
+
+        <hr></hr>
         <button type="reset" value="Reset" onClick={this.handleCancel}>Cancel</button>
         <button>Shut the Gate</button>
       </form>

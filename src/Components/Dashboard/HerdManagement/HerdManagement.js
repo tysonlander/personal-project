@@ -33,6 +33,7 @@ handleRopeCows = () => {
       return(
         <CowTableRow cowItem={element}
           key={index}
+          handleRopeCows={this.handleRopeCows}
         />
       )
     })
@@ -41,8 +42,14 @@ handleRopeCows = () => {
 
     return(
       <div>
-        <h1>Manage Herd</h1>
-        <button><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        <div className='page-header'>
+          <h1>Manage Herd</h1>
+          <hr></hr>
+        
+        </div>
+          <button><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        
+        
         {/* {mappedCows} */}
 
         <table>
@@ -50,6 +57,7 @@ handleRopeCows = () => {
             <tr>
               <th>RFID</th>
               <th>Breed</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
