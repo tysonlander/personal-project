@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import QuickActions from './QuickActions'
+import MilkProduction from '../Reports/MilkProduction'
 
 class DashHome extends Component{
   constructor() {
@@ -34,6 +35,7 @@ class DashHome extends Component{
     <>
       <h1>{this.state.greeting}, Farmer {this.props.firstName}</h1>
       <QuickActions/>
+      <MilkProduction id={this.props.id}/>
     </>
 
     )
@@ -42,7 +44,8 @@ class DashHome extends Component{
 
 function mapStateToProps(reduxState){
   return{
-    firstName: reduxState.user.firstName
+    firstName: reduxState.user.firstName,
+    id: reduxState.user.id
   }
 }
 

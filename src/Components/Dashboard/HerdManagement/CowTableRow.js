@@ -12,6 +12,9 @@ class CowTableRow extends Component {
         alert(`Cow with RFID# ${this.props.cowItem.rfid}, has been deleted.`)
         this.props.handleRopeCows()
       })
+      .catch(err => {
+        if (err) throw err
+      })
   }
 
 

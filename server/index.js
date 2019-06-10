@@ -4,6 +4,7 @@ const express = require('express'),
       massive = require('massive'),
       auth_ctrl = require('./controllers/auth_controllers')
       ranch_ctrl = require('./controllers/ranch_controllers')
+      stat_ctrl = require('./controllers/cow_stat_controllers')
 const app = express()
 const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 
@@ -33,3 +34,5 @@ app.post('/api/addCow', ranch_ctrl.addCow) // add a cow to an owners herd
 app.delete('/api/cow/:cowId', ranch_ctrl.removeCow)
 app.post('/api/cows', ranch_ctrl.getAllCows) // get all cows from one owner
 app.put('/api/editCow/:cowId', ranch_ctrl.updateCow)
+
+app.get('/api/herdstat/:id', stat_ctrl.getHerdStats)
