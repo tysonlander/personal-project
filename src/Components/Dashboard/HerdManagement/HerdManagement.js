@@ -41,8 +41,7 @@ handleRopeCows = () => {
       )
     })
 
-/////////////////////////////////////// can probably remove the below
-    console.log(this.props.loadStatus)
+    console.log(this.state.cows)
     return(
       <div>
         {this.props.loadStatus ? (<div><img src='https://cdn.dribbble.com/users/92954/screenshots/4006601/4-cow-3.gif' alt=''/>></div>):(<div></div>)}
@@ -61,6 +60,9 @@ handleRopeCows = () => {
             <tr>
               <th>RFID</th>
               <th>Breed</th>
+              <th>Gender</th>
+              <th>Purchase Price</th>
+              <th>Location</th>
               <th>Action</th>
             </tr>
           </thead>

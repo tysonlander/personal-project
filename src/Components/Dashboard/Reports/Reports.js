@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ReportsPie from './ReportPie'
+import ReportByBreed from './ReportByBreed'
 import MilkVsStress from './MilkVsStress';
 import {connect} from 'react-redux'
 
@@ -8,8 +8,8 @@ class Reports extends Component{
   render(){
     return(
       <div>
+        <ReportByBreed id={this.props.id}/>
         <MilkVsStress id={this.props.id}/>
-        <ReportsPie/>
       </div>
     )
   }

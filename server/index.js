@@ -36,3 +36,4 @@ app.post('/api/cows', ranch_ctrl.getAllCows) // get all cows from one owner
 app.put('/api/editCow/:cowId', ranch_ctrl.updateCow)
 
 app.get('/api/herdstat/:id', stat_ctrl.getHerdStats)
+app.get('/api/herdstatbreed/:id', stat_ctrl.getHerdStatsByBreed) // this gets the milk production grouped by breed and month

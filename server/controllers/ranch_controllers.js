@@ -34,9 +34,9 @@ module.exports = {
   },
   updateCow: (req, res) => {
     const {cowId} = req.params;
-    const {rfid, breed, gender, purchasePrice} = req.body
+    const {rfid, breed, gender, purchasePrice, location} = req.body
     const db = req.app.get('db')
-    db.edit_cow({rfid, breed, gender, purchasePrice, cowId})
+    db.edit_cow({rfid, breed, gender, purchasePrice, cowId, location})
       .then(dbResponse => {
         res.status(200).send(dbResponse);
       })
