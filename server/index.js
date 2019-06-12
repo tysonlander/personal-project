@@ -7,6 +7,36 @@ const express = require('express'),
       stat_ctrl = require('./controllers/cow_stat_controllers')
 const app = express()
 
+////// attempt 2 socket setup
+
+
+
+
+
+////////////////////////////////////// socket io setup
+// const io = require('socket.io').listen(app) // it needs to listen to the server somehow
+// users = [];
+// connections = [];
+
+// app.get('/dashboard/Messages', function(req, res){
+//   res.sendFile(__dirname + '/Messages.js') // needs the right file path
+// })
+
+// io.sockets.on('connection', function(socket){
+//   connections.push(socket);
+
+//   //Disconnect
+//   socket.on('disconnect', function(data){
+//     connection.splice(connections.indexOf(socket), 1)
+//     console.log('Disconnected: %s sockets connected', connections.length);
+//   })
+
+//   //Send Message
+//   socket.on('send message', function(data){
+//     io.sockets.emit('new message', {msg: data});
+//   })
+// })
+//// end of socket io setup
 
 const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
 

@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import styled from 'styled-components'
+import {SignUpToggle, LoginBox, LoginContainer} from './LoginStyled'
 
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
@@ -29,16 +31,18 @@ class Login extends Component {
 
   render(){
     return(
-      <div>
-        <button onClick={this.handleDisplayLogin}>Login</button>
-        <button onClick={this.handleDisplayRegister}>Register</button>
-        {this.state.login ? 
-          (<div><LoginForm/></div>) : 
-          (<div><RegisterForm/></div>)}
-        
-        
-        
-      </div>
+      <LoginContainer>
+        <LoginBox>
+          <SignUpToggle onClick={this.handleDisplayLogin}>Login</SignUpToggle>
+          <SignUpToggle onClick={this.handleDisplayRegister}>Register</SignUpToggle>
+          {this.state.login ? 
+            (<div><LoginForm/></div>) : 
+            (<div><RegisterForm/></div>)}
+          
+          
+          
+        </LoginBox>
+      </LoginContainer>
     )
   }
 }
@@ -50,3 +54,5 @@ class Login extends Component {
 // export default connect(mapStateToProps, {updateUser})(Login)
 
 export default Login
+
+

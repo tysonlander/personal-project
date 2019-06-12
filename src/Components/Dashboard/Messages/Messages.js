@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
+// import socket from 'socket.io'
 
 class Messages extends Component{
+
+
+
 
   render(){
     return(
@@ -8,6 +12,9 @@ class Messages extends Component{
           <h1>Messages</h1>
           <hr></hr>
       </div>
+
+      
+      
     )
   }
 }
