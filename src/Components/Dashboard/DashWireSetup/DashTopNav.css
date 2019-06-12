@@ -3,3 +3,7 @@
   height: 10vh;
   display: flex;
 }
+
+.nav-logo-name {
+  height: 45%;
+}

@@ -34,7 +34,7 @@ class DashTopNav extends Component {
   render(){
     return(
     <div className='dash-top-nav'>
-      <h1>Moola</h1>
+      <img src='https://moolapics.s3-us-west-1.amazonaws.com/logo+screenshot.JPG' alt='logo' className='nav-logo-name' />
       <h1>We <Icon.Heart size={25}/> {this.props.ranch}</h1>
       <h1>{this.props.firstName} {this.props.lastName}</h1>
       <Icon.User size={30} onClick={this.handleDropDown}/>

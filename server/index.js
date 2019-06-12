@@ -6,7 +6,9 @@ const express = require('express'),
       ranch_ctrl = require('./controllers/ranch_controllers')
       stat_ctrl = require('./controllers/cow_stat_controllers')
 const app = express()
-const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
+
+
+const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
 
 app.use(express.json())
 app.use(session({
