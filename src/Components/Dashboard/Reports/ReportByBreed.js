@@ -32,6 +32,9 @@ class ReportByBreed extends Component{
 
   render(){
     console.log('updated log:', this.state.chartData)
+    const {chartData} = this.state
+    let filteredChocolateCow = 
+    
     // let jersyCow = []
     // for(let i = 0; i < this.state.chartData.length; i++){
     //   for(let key in this.state.chartData[i]){

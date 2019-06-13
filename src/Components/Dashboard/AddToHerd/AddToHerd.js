@@ -57,25 +57,28 @@ class AddToHerd extends Component{
       
       <h1>Put 'em in the pasture.</h1>
 
-      <form onSubmit={this.handleAddCow}>
+      <form onSubmit={this.handleAddCow}> 
         <input
           type='number'
           name='rfid'
           placeholder='rfid'
           onChange={this.handleCowDetailUpdate}
         />
-        <input
-          type='text'
+        <select 
           name='breed'
-          placeholder='breed'
-          onChange={this.handleCowDetailUpdate}
-        />
-        <input
-          type='text'
+          placeholder='select breed'
+          onChange={this.handleCowDetailUpdate}>
+          <option>Select Breed</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Strawberry">Strawberry</option>
+        </select>
+        <select 
           name='gender'
-          placeholder='gender'
-          onChange={this.handleCowDetailUpdate}
-        />
+          onChange={this.handleCowDetailUpdate}>
+          <option>Select Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
         <input
           type='number'
           name='purchasePrice'
@@ -93,8 +96,8 @@ class AddToHerd extends Component{
         <button type="reset" value="Reset" onClick={this.handleCancel}>Cancel</button>
         <button>Shut the Gate</button>
       </form>
-
       </>
+
     )
   }
 }

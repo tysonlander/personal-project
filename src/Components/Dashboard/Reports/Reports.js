@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import ReportByBreed from './ReportByBreed'
-import MilkVsStress from './MilkVsStress';
 import {connect} from 'react-redux'
 
 class Reports extends Component{
@@ -9,7 +8,6 @@ class Reports extends Component{
     return(
       <div>
         <ReportByBreed id={this.props.id}/>
-        <MilkVsStress id={this.props.id}/>
       </div>
     )
   }

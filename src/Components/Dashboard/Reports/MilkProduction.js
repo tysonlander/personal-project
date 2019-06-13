@@ -23,6 +23,7 @@ class MilkProduction extends Component{
       this.setState({
         chartData: res.data
       })
+      console.log(res.data)
     })
     .catch((err) => 
       {if(err) throw err}

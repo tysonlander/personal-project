@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import styled from 'styled-components'
-import {SignUpToggle, LoginBox, LoginContainer} from './LoginStyled'
+// import styled from 'styled-components'
+// import {SignUpToggle, LoginBox, LoginContainer} from './LoginStyled'
 
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
@@ -31,18 +31,18 @@ class Login extends Component {
 
   render(){
     return(
-      <LoginContainer>
-        <LoginBox>
-          <SignUpToggle onClick={this.handleDisplayLogin}>Login</SignUpToggle>
-          <SignUpToggle onClick={this.handleDisplayRegister}>Register</SignUpToggle>
+      <div>
+        <div>
+          <button onClick={this.handleDisplayLogin}>Login</button>
+          <button onClick={this.handleDisplayRegister}>Register</button>
           {this.state.login ? 
             (<div><LoginForm/></div>) : 
             (<div><RegisterForm/></div>)}
           
           
           
-        </LoginBox>
-      </LoginContainer>
+        </div>
+      </div>
     )
   }
 }
