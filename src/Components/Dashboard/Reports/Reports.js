@@ -7,6 +7,10 @@ class Reports extends Component{
   render(){
     return(
       <div>
+        <div className='page-header'>
+          <h1>Reports</h1>
+          <hr></hr>
+        </div>
         <ReportByBreed id={this.props.id}/>
       </div>
     )

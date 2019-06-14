@@ -31,42 +31,45 @@ class ReportByBreed extends Component{
   }
 
   render(){
-    console.log('updated log:', this.state.chartData)
     const {chartData} = this.state
-    let filteredChocolateCow = 
+
+    // set data for chocolate cow breed
+    let filteredChocolateCows = chartData.filter(element => element.breed === "chocolate cow")
+    let months = []
+    let headOfCowChocolate = []
+    let totalMilkChocolate = []
+    for(let i = 0; i< filteredChocolateCows.length; i++){
+      months.push(filteredChocolateCows[i].month)
+      headOfCowChocolate.push(filteredChocolateCows[i].head_of_cow)
+      totalMilkChocolate.push(filteredChocolateCows[i].totalmilk)
+    }
+
+    // set data for brown cow breed
+    let filteredBrownCows = chartData.filter(element => element.breed === "strawberry cow")
+    let headOfCowBrown = []
+    let totalMilkBrown = []
+    for(let i = 0; i< filteredBrownCows.length; i++){
+      headOfCowBrown.push(filteredBrownCows[i].head_of_cow)
+      totalMilkBrown.push(filteredBrownCows[i].totalmilk)
+    }
     
-    // let jersyCow = []
-    // for(let i = 0; i < this.state.chartData.length; i++){
-    //   for(let key in this.state.chartData[i]){
-        
-    //     if(key === "chocolate cow") {
-    //       jersyCow.push(this.state.chartData[i].totalmilk)
-    //     }
-    //   }
-    // }
-    // console.log('jersyCow variable:', jersyCow)
+    
     return(
       
       <div>
-        <div className='page-header'>
-          <h1>Reports</h1>
-          <hr></hr>
-        </div>
-        <h1>Report by breed</h1>
-
         <Bar
-          data={{labels:['jan', 'feb'],
+          data={{labels: months,
           datasets: [
             {
               type: 'bar',
-              label: 'strawberry',
+              label: 'Chocolate',
               backgroundColor: 'rgba(217, 83, 79, 0.75)',
-              data: [50, 75]
+              data: totalMilkChocolate
             },{
               type: 'bar',
-              label: 'chocolate',
+              label: 'brown',
               backgroundColor: 'rgba(27, 83, 79, 0.75)',
-              data: [100, 150]
+              data: totalMilkBrown
             }
 
           ]
@@ -74,12 +77,12 @@ class ReportByBreed extends Component{
           options={{
             title: {
               display: true,
-              text: 'Milk Yield by Breed',
+              text: 'Milk Yield by Breed (lbs)',
               fontSize: 25
             },
             legend: {
               display: true,
-              position: 'right',
+              position: 'bottom',
               fontSize: 25
             },
             scales: {

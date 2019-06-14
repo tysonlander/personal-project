@@ -7,6 +7,7 @@ import HerdManagement from './HerdManagement/HerdManagement'
 import AddCowConfirm from './AddToHerd/AddCowConfirm'
 import Reports from './Reports/Reports'
 import Messages from './Messages/Messages'
+import Health from './Health/Health'
 
 
 export default (
@@ -17,5 +18,6 @@ export default (
    <Route path='/dashboard/HerdManagement' component={HerdManagement}/>
    <Route path='/dashboard/Reports' component={Reports}/>
    <Route path='/dashboard/Messages' component={Messages}/>
+   <Route path='/dashboard/Health' component={Health}/>
  </Switch>
 )
