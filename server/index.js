@@ -86,6 +86,7 @@ massive(CONNECTION_STRING).then((database) => {
   server.listen(SERVER_PORT, () => console.log(`cows in the field: ${SERVER_PORT}`))
 })
 
+// auth controls
 app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/user', auth_ctrl.getUser)
@@ -103,4 +104,4 @@ app.get('/api/herdstatbreed/:id', stat_ctrl.getHerdStatsByBreed) // this gets th
 // Set & update Health Flags
 app.post('/api/addhealthflag', ranch_ctrl.addHealthFlag) // add a health flag
 app.put('/api/edithealthflag/:ownerId', ranch_ctrl.updateHealthFlag)
-
+app.post('/api/getHealthFlags', ranch_ctrl.getHealthFlags)

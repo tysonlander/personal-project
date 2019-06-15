@@ -5,11 +5,11 @@ import AddToHerd from './AddToHerd/AddToHerd'
 import DashHome from './DashHome/DashHome'
 import HerdManagement from './HerdManagement/HerdManagement'
 import AddCowConfirm from './AddToHerd/AddCowConfirm'
-import Reports from './Reports/Reports'
+import Reports from './BusinessReports/Reports'
 import Messages from './Messages/Messages'
-import Health from './Health/Health'
+import Health from './HealthReports/Health'
 import HealthSettings from './HealthSettings/HealthSettings'
-
+import HealthSettingConfirm from './HealthSettings/HealthSettingConfirm'
 
 export default (
  <Switch>
@@ -21,5 +21,6 @@ export default (
    <Route path='/dashboard/Messages' component={Messages}/>
    <Route path='/dashboard/Health' component={Health}/>
    <Route path='/dashboard/HealthSettings' component={HealthSettings}/>
+   <Route path='/dashboard/HealthSettingConfirm' component={HealthSettingConfirm}/>
  </Switch>
 )

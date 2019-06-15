@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import QuickActions from './QuickActions'
-import MilkProduction from '../Reports/MilkProduction'
+import MilkProduction from '../BusinessReports/MilkProduction'
 
 class DashHome extends Component{
   constructor() {

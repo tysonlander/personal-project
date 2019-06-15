@@ -66,5 +66,16 @@ module.exports = {
       .catch(error => {
         if(error) throw error
       })
+  },
+  getHealthFlags: (req, res) => {
+    const {ownerId} = req.body
+    const db = req.app.get('db')
+    db.get_health_flags({ownerId})
+      .then((flags) => { // the id here is the ranch owner id
+      res.status(200).send(flags)
+    })
+    .catch(error => {
+      if(error) throw error;
+    })
   }
 }
