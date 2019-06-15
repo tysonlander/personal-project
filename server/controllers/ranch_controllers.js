@@ -43,5 +43,28 @@ module.exports = {
       .catch(error => {
         if(error) throw error
       })
+  },
+  addHealthFlag: (req, res) => {
+    const {ownerId, sleep, steps, stress, temp, milk} = req.body
+    const db = req.app.get('db')
+    db.add_health_flag({ownerId, sleep, steps, stress, temp, milk})
+      .then(dbResponse => {
+        res.status(200).send(dbResponse);
+      })
+      .catch(error => {
+        if(error) throw error;
+      })
+  },
+  updateHealthFlag: (req, res) => {
+    const {ownerId} = req.params;
+    const {sleep, steps, stress, temp, milk} = req.body
+    const db = req.app.get('db')
+    db.edit_health_flag({ownerId, sleep, steps, stress, temp, milk})
+      .then(dbResponse => {
+        res.status(200).send(dbResponse);
+      })
+      .catch(error => {
+        if(error) throw error
+      })
   }
 }

@@ -29,6 +29,16 @@ create table cow_daily (
   avg_temp DECIMAL(10, 2)
 );
 
+create table cow_watch (
+  id serial primary key,
+  ranch_id_owner int REFERENCES ranch_users (id),
+  sleep int,
+  steps int,
+  stress DECIMAL(10, 2),
+  temp DECIMAL(10, 2),
+  milk int
+)
+
 create table cow_hourly (
   id_ int references cows (id),
   temp_reading DECIMAL(10, 2),

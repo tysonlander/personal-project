@@ -9,6 +9,7 @@ const QuickActions = () => {
       <hr/>
       <h4><Icon.PlusCircle size={20}/><Link to='/dashboard/AddToHerd'>Add to Herd</Link></h4>
       <h4><Icon.PlusCircle size={20}/><Link to='/dashboard/HerdManagement'>Remove A Cow</Link></h4>
+      <h4><Icon.PlusCircle size={20}/><Link to='/dashboard/HealthSettings'>Health Settings</Link></h4>
     </div>
   )
 }
