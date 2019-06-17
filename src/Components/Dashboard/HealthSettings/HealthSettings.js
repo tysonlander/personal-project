@@ -32,6 +32,9 @@ class HealthSettings extends Component{
         milk: res.data[0].milk
       })
     })
+    .catch(err => {
+      console.log(err)
+    })
     
   }
 

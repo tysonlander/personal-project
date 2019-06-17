@@ -12,6 +12,10 @@ import DashSideNav from './DashSideNav'
 
 class Dashboard extends Component{
   componentDidMount(){
+    this.handleGetUser()
+  }
+
+  handleGetUser =() =>{
     axios
     .get('/auth/user')
     .then((res) => {
@@ -22,7 +26,7 @@ class Dashboard extends Component{
       {this.props.history.push('/')}
     )
   }
-  
+
   render(){
     return(
     <>

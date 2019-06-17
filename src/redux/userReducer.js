@@ -4,7 +4,7 @@ const initialState = {
   lastName: '', 
   ranch: '', 
   email: ''
-}
+} 
 
 const UPDATE_USER = 'UPDATE_USER'
 const CLEAR_USER = 'CLEAR_USER'
