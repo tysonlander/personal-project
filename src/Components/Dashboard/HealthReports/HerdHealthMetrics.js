@@ -29,17 +29,25 @@ class HerdHealthMetrics extends Component {
 
   render(){
     console.log('this is the 14 day avg health:', this.state.herdHealthData)
-    let avgSleep = 0
-    let avgSteps = 0
-    let avgStress = 0
-    let avgTemp = 0
+    let ydaAvgMilk = 0
+    let ydaAvgSleep = 0
+    let ydaAvgSteps = 0
+    let ydaAvgStress = 0
+    let ydaAvgTemp = 0
+    let dataDate = ''
     const {herdHealthData} = this.state
-
-
+    if(herdHealthData.length !== 0){
+      ydaAvgMilk = Number(herdHealthData[0].avgMilk)
+      ydaAvgSleep = Number(herdHealthData[0].avgSleep)
+      ydaAvgSteps = Number(herdHealthData[0].avgSteps)
+      ydaAvgStress = Number(herdHealthData[0].avgStress)
+      ydaAvgTemp = Number(herdHealthData[0].avgTemp)
+      dataDate = herdHealthData[0].date.substring(5, 10)
+    }
 
     return(
       <div>
-        <h3>Herd Health Metrics (14 Day Avg.)</h3>
+        <h3>Average Herd Health Metrics ({dataDate})</h3>
         <table>
           <thead>
             <tr>
@@ -47,16 +55,16 @@ class HerdHealthMetrics extends Component {
               <th>Steps</th>
               <th>Stress</th>
               <th>Temp</th>
-              <th>Avg Milk lbs</th>
+              <th>Milk</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>20</td>
-              <td>20</td>
-              <td>20</td>
-              <td>20</td>
-              <td>20</td>
+              <td>{ydaAvgSleep} min</td>
+              <td>{ydaAvgSteps}</td>
+              <td>{ydaAvgStress}</td>
+              <td>{ydaAvgTemp}<span>&#8457;</span></td>
+              <td>{ydaAvgMilk} lbs</td>
             </tr>
           </tbody>
         </table>

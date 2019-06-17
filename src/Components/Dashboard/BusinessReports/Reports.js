@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReportByBreed from './ReportByBreed'
+import HealthVsMilkCharts from './HealthVsMilkCharts'
 import {connect} from 'react-redux'
 
 class Reports extends Component{
@@ -12,6 +13,7 @@ class Reports extends Component{
           <hr></hr>
         </div>
         <ReportByBreed id={this.props.id}/>
+        <HealthVsMilkCharts id={this.props.id}/>
       </div>
     )
   }
