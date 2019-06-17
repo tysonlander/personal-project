@@ -3,6 +3,7 @@ import axios from 'axios';
 import {connect} from 'react-redux'
 import {updateFlags} from '../../../redux/healthFlags'
 import HerdHealthMetrics from './HerdHealthMetrics'
+import CowsSleepAlert from './CowsSleepAlert'
 
 
 class Health extends Component{
@@ -23,6 +24,7 @@ class Health extends Component{
   }
 
   render(){
+    let date = "2019-05-31"
     return(
       <div>
         <div className='page-header'>
@@ -30,6 +32,9 @@ class Health extends Component{
           <hr></hr>
         </div>
         <HerdHealthMetrics/>
+        <CowsSleepAlert
+          ydaDate={date}
+        />
       </div>
     )
   }

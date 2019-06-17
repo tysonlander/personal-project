@@ -5,7 +5,8 @@ const express = require('express'),
       http = require('http'),
       auth_ctrl = require('./controllers/auth_controllers'),
       ranch_ctrl = require('./controllers/ranch_controllers'),
-      stat_ctrl = require('./controllers/cow_stat_controllers')
+      stat_ctrl = require('./controllers/cow_stat_controllers'),
+      flag_cows_ctrl = require('./controllers/flag_cows_controllers')
 const app = express()
 const server = http.createServer(app)
 
@@ -108,3 +109,5 @@ app.post('/api/getHealthFlags', ranch_ctrl.getHealthFlags)
 
 // Get Health Information Herd
 app.get('/api/avgHerdHealth/:id', stat_ctrl.getAvgHerdHealth) // this gets the avg Health for the Herd for the last 14 days
+app.get('/api/cowsNotSleeping/:id', flag_cows_ctrl.getCowsNotSleeping) // this gets the cows under a certain sleep level
+
