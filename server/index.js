@@ -105,3 +105,6 @@ app.get('/api/herdstatbreed/:id', stat_ctrl.getHerdStatsByBreed) // this gets th
 app.post('/api/addhealthflag', ranch_ctrl.addHealthFlag) // add a health flag
 app.put('/api/edithealthflag/:ownerId', ranch_ctrl.updateHealthFlag)
 app.post('/api/getHealthFlags', ranch_ctrl.getHealthFlags)
+
+// Get Health Information Herd
+app.get('/api/avgHerdHealth/:id', stat_ctrl.getAvgHerdHealth) // this gets the avg Health for the Herd for the last 14 days

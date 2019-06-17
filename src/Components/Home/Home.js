@@ -11,9 +11,9 @@ class Home extends Component {
 
           <div className='content'>
             <div className='slider-wrapper'>
-              We help you
+              We help
               <div className='slider'>
-                <div className='slider-text1'>increase profits.</div>
+                <div className='slider-text1'>put the MOO in your MOOLA.</div>
                 <div className='slider-text2'>improve herd health.</div>
                 <div className='slider-text3'>grow your farm.</div>
               </div>
