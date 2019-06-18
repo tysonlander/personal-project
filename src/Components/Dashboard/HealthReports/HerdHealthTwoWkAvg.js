@@ -54,7 +54,7 @@ class HerdHealthTwoWkAvg extends Component {
 
     return(
       <div>
-        <h3>Herd Health Metrics (2 Week Avg.)</h3>
+        <h3>Key Herd Health Stats (2 Week Avg.)</h3>
         <table>
           <thead>
             <tr>

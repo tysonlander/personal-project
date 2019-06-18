@@ -8,7 +8,7 @@ class Home extends Component {
       <div>
         <HomeNav/>
         <h1>Home</h1> 
-
+          <img alt='' src='https://media-public.canva.com/MADGxuUTFBo/4/screen.jpg'/>
           <div className='content'>
             <div className='slider-wrapper'>
               We help
