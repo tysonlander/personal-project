@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import {updateFlags} from '../../../redux/healthFlags'
 import HerdHealthMetrics from './HerdHealthMetrics'
 import CowsSleepAlert from './CowsSleepAlert'
-
+import CowsStepAlert from './CowsStepAlert/CowsStepAlert'
+import CowsStressAlert from './CowsStressAlert/CowsStressAlert'
 
 class Health extends Component{
     
@@ -33,6 +34,12 @@ class Health extends Component{
         </div>
         <HerdHealthMetrics/>
         <CowsSleepAlert
+          ydaDate={date}
+        />
+        <CowsStepAlert
+          ydaDate={date}
+        />
+        <CowsStressAlert
           ydaDate={date}
         />
       </div>

@@ -28,7 +28,6 @@ class HerdHealthMetrics extends Component {
   }
 
   render(){
-    console.log('this is the 14 day avg health:', this.state.herdHealthData)
     let ydaAvgMilk = 0
     let ydaAvgSleep = 0
     let ydaAvgSteps = 0

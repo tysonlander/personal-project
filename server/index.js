@@ -110,5 +110,10 @@ app.post('/api/getHealthFlags', ranch_ctrl.getHealthFlags)
 
 // Get Health Information Herd
 app.get('/api/avgHerdHealth/:id', stat_ctrl.getAvgHerdHealth) // this gets the avg Health for the Herd for the last 14 days
-app.get('/api/cowsNotSleeping/:id', flag_cows_ctrl.getCowsNotSleeping) // this gets the cows under a certain sleep level
 
+app.get('/api/cowsNotSleeping/:id', flag_cows_ctrl.getCowsNotSleeping) // this gets the cows under a certain sleep level
+app.get('/api/cowsLowSteps/:id', flag_cows_ctrl.getCowsLowSteps) // this gets the cows under a certain step level
+app.get('/api/cowsHighStress/:id', flag_cows_ctrl.getCowsGreatStress) // this gets the cows over a certain stress level
+app.get('/api/cowsHighTemp/:id', flag_cows_ctrl.getCowsHighTemp) // this gets the cows over a certain temp level
+app.get('/api/cowsLowMilk/:id', flag_cows_ctrl.getCowsLowMilk) // this gets the cows under a certain milk level
+app.get('/api/oneCowHealth/:cowId', flag_cows_ctrl.getOneCowHealth) // this gets the cows under a certain milk level

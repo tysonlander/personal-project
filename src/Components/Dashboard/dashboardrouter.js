@@ -10,6 +10,7 @@ import Messages from './Messages/Messages'
 import Health from './HealthReports/Health'
 import HealthSettings from './HealthSettings/HealthSettings'
 import HealthSettingConfirm from './HealthSettings/HealthSettingConfirm'
+import OneCowFullHealthRep from './HealthReports/IndividualCowHealth/OneCowFullHealthRep'
 
 export default (
  <Switch>
@@ -22,5 +23,6 @@ export default (
    <Route path='/dashboard/Health' component={Health}/>
    <Route path='/dashboard/HealthSettings' component={HealthSettings}/>
    <Route path='/dashboard/HealthSettingConfirm' component={HealthSettingConfirm}/>
+   <Route path='/dashboard/HealthIndividualReport' component={OneCowFullHealthRep}/>
  </Switch>
 )

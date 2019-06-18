@@ -28,7 +28,6 @@ class DashHome extends Component{
         greeting: 'Good Evening'
       })
     }
-    console.log("this is the hour:", hour)
   }
 
   render(){

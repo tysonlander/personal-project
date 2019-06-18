@@ -1,18 +1,21 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import {updateUser} from '../../../redux/userReducer'
+import {updateFlags} from '../../../redux/healthFlags'
 import {connect} from 'react-redux'
 import './Dashboard.css'
 
 import DashNav from './DashTopNav'
 import dashboardrouter from '../dashboardrouter'
 import DashSideNav from './DashSideNav'
+import { async } from 'q';
 
 
 
 class Dashboard extends Component{
-  componentDidMount(){
-    this.handleGetUser()
+  componentDidMount = async() => {
+    await this.handleGetUser()
+    this.handleGetFlags()
   }
 
   handleGetUser =() =>{
@@ -26,6 +29,19 @@ class Dashboard extends Component{
       {this.props.history.push('/')}
     )
   }
+
+  handleGetFlags =() =>{
+    axios
+    .post('/api/getHealthFlags', {ownerId: this.props.user.id})
+    .then(res => {
+      this.props.updateFlags(res.data[0])
+    })
+    .catch((err) =>
+      console.log(err)
+    )
+  }
+
+
 
   render(){
     return(
@@ -47,4 +63,4 @@ function mapStateToProps(reduxState){
   return reduxState
 }
 
-export default connect(mapStateToProps, {updateUser})(Dashboard)
+export default connect(mapStateToProps, {updateUser, updateFlags})(Dashboard)
