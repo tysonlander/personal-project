@@ -1,3 +1,51 @@
+h1 {
+ font-size: 55px;
+}
+h2 {
+  font-size: 36px; 
+
+}
+h3 {
+  font-size: 24px ;
+
+}
+
+/* sub headings */
+h4 {
+  font-size: 20px; 
+  font-style: normal;
+}
+
+
+h5 {
+  font-size: 16px; 
+
+}
+
+/* body copy between 13-16 */
+/* buttons */
+h6 {
+  font-size: 14px; 
+ 
+}
+
+/* body copy */
+h7 {
+  font-size: 12px; 
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }

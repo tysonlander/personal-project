@@ -7,8 +7,7 @@ class Home extends Component {
     return(
       <div>
         <HomeNav/>
-        <h1>Home</h1> 
-          <img alt='' src='https://media-public.canva.com/MADGxuUTFBo/4/screen.jpg'/>
+          <img alt='' src='https://moolapics.s3-us-west-1.amazonaws.com/fuzzycow.jpg'/>
           <div className='content'>
             <div className='slider-wrapper'>
               We help
