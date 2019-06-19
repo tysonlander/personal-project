@@ -6,6 +6,8 @@ import HerdHealthMetrics from './HerdHealthMetrics'
 import CowsSleepAlert from './CowsSleepAlert'
 import CowsStepAlert from './CowsStepAlert/CowsStepAlert'
 import CowsStressAlert from './CowsStressAlert/CowsStressAlert'
+import CowsTempAlert from './CowsTempAlert/CowsTempAlert'
+import CowsMilkAlert from './CowsMilkAlert/CowsMilkAlert'
 
 class Health extends Component{
     
@@ -40,6 +42,12 @@ class Health extends Component{
           ydaDate={date}
         />
         <CowsStressAlert
+          ydaDate={date}
+        />
+        <CowsTempAlert
+          ydaDate={date}
+        />
+        <CowsMilkAlert
           ydaDate={date}
         />
       </div>

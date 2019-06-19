@@ -2,26 +2,26 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {connect} from 'react-redux'
-import CowsStressTableRow from './CowsStressTableRow'
+import CowsMilkTableRow from './CowsMilkTableRow'
 
-class CowsStressAlert extends Component{
+class CowsMilkAlert extends Component{
   constructor(){
     super()
     this.state = {
-      cowsHighStress: []
+      cowsLowMilk: []
     }
   }
   
   componentDidMount(){
-    this.getCowsHighStress()
+    this.getCowsLowMilk()
   }
 
-  getCowsHighStress(){
+  getCowsLowMilk(){
     axios
-    .get(`/api/cowsHighStress/${this.props.id}?stressFlag=${this.props.stressFlag}&ydaDate=${this.props.ydaDate}`)
+    .get(`/api/cowsLowMilk/${this.props.id}?milkFlag=${this.props.milkFlag}&ydaDate=${this.props.ydaDate}`)
     .then((res) => {
       this.setState({
-        cowsHighStress: res.data
+        cowsLowMilk: res.data
       })
     })
     .catch((err) => 
@@ -30,19 +30,18 @@ class CowsStressAlert extends Component{
   }
 
   render(){
-    let cowList = this.state.cowsHighStress.map((element, index) => {
+    let cowList = this.state.cowsLowMilk.map((element, index) => {
       return(
-        <CowsStressTableRow
+        <CowsMilkTableRow
           cow={element}
           key={index}
-          
         />
       )
     })
 
     return(
       <div>
-        <h3>Stress above {this.props.stressFlag} <span><Link to='/dashboard/HealthSettings'>edit</Link></span></h3>
+        <h3>Milk lower than {this.props.milkFlag} lbs/day<span><Link to='/dashboard/HealthSettings'>edit</Link></span></h3>
 
         {/* <h1>{this.props.id}</h1>
         <h1>Sleep Flag {this.props.sleepFlag}</h1>
@@ -54,7 +53,6 @@ class CowsStressAlert extends Component{
             <tr>
               <th>RFID</th>
               <th>Milk (lbs)</th>
-              <th>Stress Index</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -71,12 +69,12 @@ class CowsStressAlert extends Component{
 function mapStateToProps(reduxState){
   return {
     id: reduxState.user.id,
-    // milk: reduxState.healthFlags.milk,
+    milkFlag: reduxState.healthFlags.milk,
     // sleepFlag: reduxState.healthFlags.sleep,
     // stepFlag: reduxState.healthFlags.steps,
-    stressFlag: reduxState.healthFlags.stress,
-    // temp: reduxState.healthFlags.temp
+    // stress: reduxState.healthFlags.stress,
+    // tempFlag: reduxState.healthFlags.temp
   }
 }
 
-export default connect(mapStateToProps)(CowsStressAlert)
+export default connect(mapStateToProps)(CowsMilkAlert)

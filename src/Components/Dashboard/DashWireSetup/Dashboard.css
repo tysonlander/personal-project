@@ -4,6 +4,9 @@
 }
 
 .app-page-display-box {
+  overflow: scroll;
+  width: 85vw;
+  height: 90vh;
   display: flex;
   flex-direction: column;
 }

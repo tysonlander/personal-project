@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {updateCowId} from '../../../../redux/oneCowHealthReducer'
 
 
-class CowsStepTableRow extends Component{
+class CowsMilkTableRow extends Component{
   handleUpdateCowId = (e) => {
     this.props.updateCowId({cowId: this.props.cow.id})
   }
@@ -16,7 +16,6 @@ class CowsStepTableRow extends Component{
         <tr>
           <td>{this.props.cow.rfid}</td>
           <td>{this.props.cow.milk}</td>
-          <td>{this.props.cow.steps}</td>
           <td><Link to='/dashboard/HealthIndividualReport' onClick={(e) => this.handleUpdateCowId(e)}>Details <Icon.ArrowRightCircle size={15}/></Link> </td>
         </tr>
       </>
@@ -24,4 +23,4 @@ class CowsStepTableRow extends Component{
   }
 }
 
-export default connect(null, {updateCowId})(CowsStepTableRow)
+export default connect(null, {updateCowId})(CowsMilkTableRow)
