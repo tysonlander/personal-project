@@ -7,7 +7,7 @@ class Home extends Component {
     return(
       <div>
         <HomeNav/>
-          <img alt='' src='https://moolapics.s3-us-west-1.amazonaws.com/fuzzycow.jpg'/>
+          {/* <img alt='' src='https://moolapics.s3-us-west-1.amazonaws.com/fuzzycow.jpg'/> */}
           <div className='content'>
             <div className='slider-wrapper'>
               We help
@@ -19,7 +19,9 @@ class Home extends Component {
             </div>
           </div>
 
-        
+          {/* https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg
+          https://moolapics.s3-us-west-1.amazonaws.com/hellocow.jpg
+          https://moolapics.s3-us-west-1.amazonaws.com/sunnycow.jpg */}
 
         {/* <div className='benefits-box'>
 

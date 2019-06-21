@@ -56,7 +56,7 @@ class ReportByBreed extends Component{
     
     return(
       
-      <div>
+      <div className='chart-size-1'>
         <Bar
           data={{labels: months,
           datasets: [

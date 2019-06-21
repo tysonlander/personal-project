@@ -51,7 +51,7 @@ class HerdHealthMetrics extends Component {
 
     console.log('milk array', dateRange)
     return(
-      <div>
+      <div className='chart-size-1'>
         <h3>Herd Health Metrics (14 Day Avg.)</h3>
         {/* sleep vs milk graphed */}
         <div>

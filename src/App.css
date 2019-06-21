@@ -1,5 +1,6 @@
 h1 {
- font-size: 55px;
+ font-size: 40px;
+ margin: 0;
 }
 h2 {
   font-size: 36px; 
@@ -33,6 +34,23 @@ h6 {
 h7 {
   font-size: 12px; 
  
+}
+
+/* remove styling from a link */
+.link-one {
+  text-decoration: none;
+  color: rgba(53, 53, 57, 1)
+}
+.link-one:hover {
+  font-weight: bold;
+}
+
+.chart-size-1 {
+  width: 70vw
+}
+
+.cow-circle-picture{
+  height: 150px;
 }
 
 

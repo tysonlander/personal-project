@@ -7,6 +7,9 @@
 	justify-content: space-between;
 	align-items: center;
 	align-content: flex-start;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+	position: absolute;
+	width: 100vw;
 }
 
 .nav-logo-name {
@@ -21,7 +24,7 @@
 
 .dash-top-nav-1b {
   margin-left: 1.2rem;
-  
+  width: 13vw;
   display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

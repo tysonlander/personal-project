@@ -2,10 +2,14 @@
   background: rgb(243, 243, 244);
   width: 15vw;
   height: 90vh;
+  margin-top: 10vh;
+}
+
+.dash-side-nav-link-container{
+  margin: 1rem 0 0 .5rem;
   display: flex;
   flex-direction: column;
 }
-
 
 
 /* .left-nav-icon {

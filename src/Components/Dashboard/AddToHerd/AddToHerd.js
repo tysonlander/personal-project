@@ -54,7 +54,8 @@ class AddToHerd extends Component{
           <h1>Add To Herd</h1>
           <hr></hr>
         </div>
-      
+      <img className='cow-circle-picture' src='https://moolapics.s3-us-west-1.amazonaws.com/sunnycow.jpg' alt=''/>
+
       <h1>Put 'em in the pasture.</h1>
 
       <form onSubmit={this.handleAddCow}> 

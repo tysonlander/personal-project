@@ -4,9 +4,11 @@
 }
 
 .app-page-display-box {
+  margin-top: 10vh;
   overflow: scroll;
   width: 85vw;
   height: 90vh;
   display: flex;
   flex-direction: column;
 }
+

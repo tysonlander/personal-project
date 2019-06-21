@@ -41,7 +41,7 @@ class MilkProduction extends Component{
       dataDate.push(this.state.chartData[i].date.substring(0, 10))
     }
     return(
-        <div className="chart">
+        <div className='chart-size-1'>
           <Line 
             data={{labels: dataDate,
             datasets: [

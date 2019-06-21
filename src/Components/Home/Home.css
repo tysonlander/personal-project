@@ -1,8 +1,8 @@
-body{
+/* body{
   background-image: url('https://moolapics.s3-us-west-1.amazonaws.com/fuzzycow.jpg');
   background-repeat: no-repeat;
-  height: 100vh;
-}
+  background-size: cover;
+} */
 
 .content {
   width: 100vw;
