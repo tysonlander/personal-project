@@ -8,12 +8,12 @@ import './Dashboard.css'
 import DashNav from './DashTopNav'
 import dashboardrouter from '../dashboardrouter'
 import DashSideNav from './DashSideNav'
-import { async } from 'q';
+import { async } from 'async';
 
 
 
 class Dashboard extends Component{
-  componentDidMount = async() => {
+  componentDidMount = async () => {
     await this.handleGetUser()
     this.handleGetFlags()
   }
