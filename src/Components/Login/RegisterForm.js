@@ -43,8 +43,7 @@ class RegisterForm extends Component {
 
   render(){
     return(
-      <>
-        <h1>Sign Up</h1>
+      <div className='input-box'>
         <form onSubmit={this.handleUserRegister}>
           <input
             type='text'
@@ -76,9 +75,11 @@ class RegisterForm extends Component {
             placeholder='Password'
             onChange={this.handleRegisterInfoUpdate}
           />
-          <button>Register</button>
+          <button className='butn-primary first-button'>Register</button>
+          <h2 className='paragraph-small'>Already Have an Account?</h2>
+          <button className='butn-secondary' onClick={this.props.handleDisplayLogin}>Login</button>
         </form>
-      </>
+      </div>
     )
   }
 }

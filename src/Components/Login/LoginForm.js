@@ -38,8 +38,7 @@ class LoginForm extends Component {
 
   render(){
     return(
-      <>
-        <h1>Login</h1>
+      <div className='input-box'>
         <form onSubmit={this.handleUserLogin}>
           <input
             type='text'
@@ -53,9 +52,11 @@ class LoginForm extends Component {
             placeholder='Password'
             onChange={this.handleLoginInfoUpdate}
           />
-          <button>Log In</button>
+          <button className='butn-primary first-button'>Login</button>
+          <h2 className='paragraph-small'>Don't have an account?</h2>
+          <button className='butn-secondary' onClick={this.props.handleDisplayRegister}>Register</button>
         </form>
-      </>
+      </div>
     )
   }
 }

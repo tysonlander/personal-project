@@ -1,31 +1,35 @@
 import React, {Component} from 'react'
 import HomeNav from './HomeNav'
-import {Link} from 'react-router-dom'
 import './Home.css'
 import * as Icon from 'react-feather'
 
+
 class Home extends Component {
+
+  handleToRegister = () => {
+    this.props.history.push('/login')
+  }
+  
   render(){
     return(
       <div className='home-page'>
         <HomeNav/>
-          
         <div className='hero-main'>
           <div className='row-one'>
             <div className='box-one'>
               <h1 className='title-one'>More Data, More Dairy</h1>
-              <button className='butn-secondary-white'><Link to='/login'>Register</Link></button>
+              <button className='butn-secondary-white' onClick={this.handleToRegister}>Register</button>
             </div>
             <div className='box-two'></div>
           </div>
           <br/>
           <div className='row-two'>
-            <h2><a href='#raptors'>Learn More</a></h2>
+            <h2>Learn More</h2>
             <Icon.ChevronDown size={30} stroke='#353539'/>
           </div>
         </div>
         
-        <section className='section-two' id='raptors'>
+        <section className='section-two'>
           <h2 className='title-mini'>what we're all about</h2>
           <div className='content'>
             <div className='slider-wrapper'>
@@ -38,6 +42,7 @@ class Home extends Component {
             </div>
           </div>
         </section>
+        
         <section className='section-three'>
           <div className='quote-box'>
             <p>"They really do put the moo in the moola. This has made my farm more profitable and has really simplified my dairy farm"</p>
@@ -64,7 +69,7 @@ class Home extends Component {
           <h2 className='title-mini'>Are you ready?</h2>
           <h1 className='title-one'>Start optimizing your farm today.</h1>
           <p className='paragraph-small'>Join the thousands of farms who trust Moola with their herds.</p>
-          <button className='butn-secondary-white'><Link to='/login'>Register</Link></button>
+          <button className='butn-secondary-white' onClick={this.handleToRegister}>Register</button>
         </section>
 
         <footer className='home-footer'>

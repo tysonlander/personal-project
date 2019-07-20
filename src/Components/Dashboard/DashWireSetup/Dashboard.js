@@ -50,9 +50,7 @@ class Dashboard extends Component{
       <div className='dashboard-main'>
         <DashSideNav/>
         <div className='app-page-display-box'>
-          
           {dashboardrouter} 
-          {/* {this.props.loading.loadStatus ? (<div><img src='https://cdn.dribbble.com/users/92954/screenshots/4006601/4-cow-3.gif' alt=''/>></div>):(<div></div>)} */}
         </div>
       </div>
     </>

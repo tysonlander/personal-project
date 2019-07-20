@@ -1,8 +1,10 @@
 .dash-side-nav {
   background: rgb(243, 243, 244);
   width: 15vw;
-  height: 90vh;
-  margin-top: 10vh;
+  height: 93vh;
+  margin-top: 7vh;
+  padding-left: .7em;
+  box-sizing: content-box;
 }
 
 .dash-side-nav-link-container{
@@ -11,27 +13,3 @@
   flex-direction: column;
 }
 
-
-/* .left-nav-icon {
-  color: red;
-} */
-
-/* .left-nav-icon:hover {
-  color: blue;
-}
-
-.left-nav-icon::after {
-  color: purple;
-} */
-
-.left-nav-text {
- color: blue;
-}
-
-.left-nav-text:hover {
-  color: red;
- }
-
- .left-nav-text:after {
-  color: purple;
- }
