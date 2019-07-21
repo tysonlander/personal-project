@@ -1,10 +1,11 @@
 .dash-side-nav {
-  background: rgb(243, 243, 244);
+  background: #FBFAFA;
   width: 15vw;
   height: 93vh;
   margin-top: 7vh;
   padding-left: .7em;
   box-sizing: content-box;
+  border-right: 1px solid #EAEAEA;
 }
 
 .dash-side-nav-link-container{

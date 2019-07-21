@@ -32,12 +32,22 @@ class DashHome extends Component{
 
   render(){
     return(
-    <>
-      <h1>{this.state.greeting}, Farmer {this.props.firstName}</h1>
-      <QuickActions/>
-      <MilkProduction id={this.props.id}/>
-      <HerdHealthTwoWkAvg id={this.props.id}/>
-    </>
+    <section className='dashboard-home'>
+      <h1>{this.state.greeting}, Farmer {this.props.lastName}</h1>
+      <div className='row-two'>
+        <div className='column-one'>
+          <MilkProduction id={this.props.id}/>
+          <HerdHealthTwoWkAvg id={this.props.id}/>
+        </div>
+        
+        <div className='quick-actions'>
+          <QuickActions/>
+
+        </div>
+
+      </div>
+      
+    </section>
 
     )
   }
@@ -46,6 +56,7 @@ class DashHome extends Component{
 function mapStateToProps(reduxState){
   return{
     firstName: reduxState.user.firstName,
+    lastName: reduxState.user.lastName,
     id: reduxState.user.id
   }
 }

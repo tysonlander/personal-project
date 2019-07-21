@@ -24,11 +24,10 @@
 
 .dash-top-nav-1b {
   margin-left: 1.2rem;
-  width: 13vw;
+  width: 30vw;
   display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-between;
 	align-items: center;
 	align-content: flex-start;
 }
@@ -40,9 +39,18 @@
 }
 
 .dash-top-nav-1b-text {
-  margin: 0 1rem;
+  /* margin: 0 1.2em; */
 	text-transform: capitalize;
 	font-weight: 400;
+	font-size: 1em;
+}
+
+.heart-icon {
+	margin: 0 0.5em;
+}
+
+.username {
+	margin-right: 1em;
 }
 
 .dash-top-nav-1 {
@@ -62,5 +70,27 @@
 	justify-content: space-between;
 	align-items: center;
 	align-content: flex-start;
+}
+
+.dash-top-nav-dropdown {
+	background: #fff;
+	width: 15vw;
+	position: fixed;
+	right: 0;
+	top: 7vh;
+	box-shadow: 1px 1px 6px rgba(114, 114, 114, 0.438);
+	border: 1px solid rgba(114, 114, 114, 0.63);
+	/* margin-top: 7vh;
+	margin-right: 0; */
+}
+
+.nav-dropdown-options {
+	margin: 1em 0;
+	width: 100%;
+	background: none;
+	border: none;
+	color: #5099DE;
+	text-align: left;
+	margin-left: 1em;
 }
 

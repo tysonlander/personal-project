@@ -1,6 +1,8 @@
 h1 {
- font-size: 40px;
- margin: 0;
+  font-size: 32px;
+  margin: 0 0 .5em 0;
+  font-weight: 500;
+  color: #1C1C1C;
 }
 h2 {
   font-size: 36px; 
@@ -8,13 +10,15 @@ h2 {
 }
 h3 {
   font-size: 24px ;
-
+  font-weight: 400;
 }
 
 /* sub headings */
 h4 {
   font-size: 20px; 
   font-style: normal;
+  font-weight: 400;
+  color: rgb(77, 77, 77);
 }
 
 

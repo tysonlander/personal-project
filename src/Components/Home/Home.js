@@ -20,7 +20,9 @@ class Home extends Component {
               <h1 className='title-one'>More Data, More Dairy</h1>
               <button className='butn-secondary-white' onClick={this.handleToRegister}>Register</button>
             </div>
-            <div className='box-two'></div>
+            <div className='box-two'>
+              <img className='box-two-img' src='https://moolapics.s3-us-west-1.amazonaws.com/moola-application-sideview.png' alt=''/>
+            </div>
           </div>
           <br/>
           <div className='row-two'>

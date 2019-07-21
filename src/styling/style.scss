@@ -1,4 +1,5 @@
 $darkgrey: rgb(53, 53, 57);
+$lightgrey: #FBFAFA;
 $lightgrey1: rgb(77, 77, 77);
 $lightgrey2: rgb(114, 114, 114);
 $blue: #5499DB;
@@ -6,7 +7,16 @@ $darkblue: rgb(72, 141, 206);
 $hotpink: #E1578B;
 $lightyellow: #FEBF5C;
 $lightgreen: #71D790;
+$mint: #2AD2C3;
 
+//border
+$bordercolor: #EAEAEA;
+$roundcorner: 0.3em;
+
+//text
+$bluetext: #5099DE;
+$blackfont: #1C1C1C;
+$darkgreyfont: rgb(77, 77, 77);
 
 
 // buttons
@@ -178,7 +188,14 @@ $lightgreen: #71D790;
       .box-two {
         height: 65vh;
         width: 40vw;
-        background: blueviolet;
+        // background: blueviolet;
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        .box-two-img {
+          // height: 100%;
+          width: 75%;
+        }
       }
     }
     .row-two {
@@ -329,4 +346,69 @@ $lightgreen: #71D790;
     }
   }
 
+}
+
+.dashboard-home {
+  h1 {
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .row-two {
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+    .column-one {
+      width: 50vw;
+      // background: red;
+      .dashbord-chart {
+        // width: 90%;
+        background: $lightgrey;
+        border: 1px solid $bordercolor;
+        border-radius: $roundcorner;
+      }
+      .keystats-container {
+        margin-top: 2em;
+        background: #EDF9F7;
+        border-radius: $roundcorner;
+        border: 2px solid #C2EEE6;
+        box-sizing: border-box;
+        padding: 1em;
+        h3 {
+          margin: .5em;
+        }
+        // .top-of-table {
+        //   border-bottom: 1px solid red;
+          
+        // }
+        th {
+          width: 10vw;
+          color: $mint;
+          font-size: 1.2em;
+          border-bottom: 2px solid $mint;
+          padding: 1px 0;
+
+        }
+        td {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .quick-actions {
+    width: 20vw;
+    background: #FFF9F0;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: $roundcorner;
+    border: 2px solid #FFF0D7;
+    // border: 1px solid rgba(37, 214, 202, 0.397);
+    h4 {
+      color: $darkblue;
+      .link-text {
+        text-decoration: none;
+        color: $blackfont;
+        margin: 0 .5em;
+      }
+    }
+  }
 }

@@ -39,16 +39,19 @@ class DashTopNav extends Component {
         <img src='https://moolapics.s3-us-west-1.amazonaws.com/logo+screenshot.JPG' alt='logo' className='nav-logo-name' />
         <div className='dash-top-nav-1b'>
           <h4 className='dash-top-nav-1b-text'>We</h4>
-          <Icon.Heart size={20} fill='#2AD2C4' stroke='none'/> 
+          <Icon.Heart size={20} fill='#2AD2C4' stroke='none' className='heart-icon'/> 
           <h4 className='dash-top-nav-1b-text'>{this.props.ranch}</h4>
 
         </div>
       </div>
       <div className='dash-top-nav-2'>
-        <h4 className='dash-top-nav-1b-text'>{this.props.firstName} {this.props.lastName}</h4>
+        <h4 className='dash-top-nav-1b-text username'>{this.props.firstName} {this.props.lastName}</h4>
         <Icon.User size={30} onClick={this.handleDropDown}/>
 
-        {this.state.userDropDown ? (<div><button onClick={this.handleLogOut}>Log Out</button></div>): (<div></div>) }
+        {this.state.userDropDown ? (
+          <div className='dash-top-nav-dropdown'>
+            <button className='nav-dropdown-options' onClick={this.handleLogOut}>Log Out</button>
+          </div>): (<div></div>) }
       </div>
       
 

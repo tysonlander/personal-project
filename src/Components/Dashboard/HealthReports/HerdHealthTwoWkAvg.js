@@ -53,11 +53,11 @@ class HerdHealthTwoWkAvg extends Component {
     console.log('milk total', avgMilk)
 
     return(
-      <div>
+      <div className='keystats-container'>
         <h3>Key Herd Health Stats (2 Week Avg.)</h3>
         <table>
           <thead>
-            <tr>
+            <tr className='top-of-table'>
               <th>Sleep</th>
               <th>Steps</th>
               <th>Stress</th>
