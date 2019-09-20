@@ -1,28 +1,30 @@
-import React, {Component} from 'react'
-import ReportByBreed from './ReportByBreed'
-import HealthVsMilkCharts from './HealthVsMilkCharts'
-import {connect} from 'react-redux'
+import React, { Component } from "react";
+import ReportByBreed from "./ReportByBreed";
+import HealthVsMilkCharts from "./HealthVsMilkCharts";
+import { connect } from "react-redux";
 
-class Reports extends Component{
-
-  render(){
-    return(
+class Reports extends Component {
+  render() {
+    return (
       <div>
-        <div className='page-header'>
+        <div className="page-header">
           <h1>Reports</h1>
-          <hr></hr>
+          <hr />
         </div>
-        <ReportByBreed id={this.props.id}/>
-        <HealthVsMilkCharts id={this.props.id}/>
+
+        {/* <div className="business-reports">
+          <ReportByBreed id={this.props.id} />
+        </div> */}
+        <HealthVsMilkCharts id={this.props.id} />
       </div>
-    )
+    );
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return {
     id: reduxState.user.id
-  }
+  };
 }
 
-export default connect(mapStateToProps)(Reports)
+export default connect(mapStateToProps)(Reports);

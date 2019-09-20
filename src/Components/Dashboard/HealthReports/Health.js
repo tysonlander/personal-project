@@ -1,61 +1,49 @@
-import React, {Component} from 'react'
-import axios from 'axios';
-import {connect} from 'react-redux'
-import {updateFlags} from '../../../redux/healthFlags'
-import HerdHealthMetrics from './HerdHealthMetrics'
-import CowsSleepAlert from './CowsSleepAlert'
-import CowsStepAlert from './CowsStepAlert/CowsStepAlert'
-import CowsStressAlert from './CowsStressAlert/CowsStressAlert'
-import CowsTempAlert from './CowsTempAlert/CowsTempAlert'
-import CowsMilkAlert from './CowsMilkAlert/CowsMilkAlert'
+import React, { Component } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
+import { updateFlags } from "../../../redux/healthFlags";
+import HerdHealthMetrics from "./HerdHealthMetrics";
+import CowsSleepAlert from "./CowsSleepAlert";
+import CowsStepAlert from "./CowsStepAlert/CowsStepAlert";
+import CowsStressAlert from "./CowsStressAlert/CowsStressAlert";
+import CowsTempAlert from "./CowsTempAlert/CowsTempAlert";
+import CowsMilkAlert from "./CowsMilkAlert/CowsMilkAlert";
 
-class Health extends Component{
-    
-  componentDidMount(){
-    this.handleGetFlags()
+class Health extends Component {
+  componentDidMount() {
+    this.handleGetFlags();
   }
 
-  handleGetFlags =() =>{
+  handleGetFlags = () => {
     axios
-    .post('/api/getHealthFlags', {ownerId: this.props.ownerId})
-    .then(res => {
-      this.props.updateFlags(res.data[0])
-    })
-    .catch((err) =>
-      console.log(err)
-    )
-  }
+      .post("/api/getHealthFlags", { ownerId: this.props.ownerId })
+      .then(res => {
+        this.props.updateFlags(res.data[0]);
+      })
+      .catch(err => console.log(err));
+  };
 
-  render(){
-    let date = "2019-05-31"
-    return(
+  render() {
+    let date = "2019-05-31";
+    return (
       <div>
-        <div className='page-header'>
+        <div className="page-header">
           <h1>Health</h1>
-          <hr></hr>
+          <hr />
         </div>
-        <HerdHealthMetrics/>
-        <CowsSleepAlert
-          ydaDate={date}
-        />
-        <CowsStepAlert
-          ydaDate={date}
-        />
-        <CowsStressAlert
-          ydaDate={date}
-        />
-        <CowsTempAlert
-          ydaDate={date}
-        />
-        <CowsMilkAlert
-          ydaDate={date}
-        />
-      </div>
-    )
-  }
-} 
 
-function mapStateToProps(reduxState){
+        <HerdHealthMetrics />
+        <CowsSleepAlert ydaDate={date} />
+        <CowsStepAlert ydaDate={date} />
+        <CowsStressAlert ydaDate={date} />
+        <CowsTempAlert ydaDate={date} />
+        <CowsMilkAlert ydaDate={date} />
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(reduxState) {
   return {
     ownerId: reduxState.user.id,
     milk: reduxState.healthFlags.milk,
@@ -63,7 +51,10 @@ function mapStateToProps(reduxState){
     steps: reduxState.healthFlags.steps,
     stress: reduxState.healthFlags.stress,
     temp: reduxState.healthFlags.temp
-  }
+  };
 }
 
-export default connect(mapStateToProps, {updateFlags})(Health)
+export default connect(
+  mapStateToProps,
+  { updateFlags }
+)(Health);

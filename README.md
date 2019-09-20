@@ -1,3 +1,13 @@
+My purpose in building this project was to get familiar with architecting a relational database and visualize the data for the end user. 
+
+See the Live Site: (http://getmoola.us/#/)
+
+<img src="./src/assets/dashboardScreenShot1.JPG" width="500" align="center">
+<img src="./src/assets/moola-business-reports.JPG" width="500" align="center">
+<img src="./src/assets/moola-dashboard-a.JPG" width="500" align="center">
+<img src="./src/assets/moola-homescreen.JPG" width="500" align="center">
+<img src="./src/assets/moola-register.JPG" width="500" align="center">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
