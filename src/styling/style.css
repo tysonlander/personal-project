@@ -389,6 +389,17 @@
   padding-bottom: 2em;
 }
 
+.authentication-page .row-one .input-box .guest-login-callout h5 {
+  color: red;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.authentication-page .row-one .input-box .guest-login-callout h5 .bold-title {
+  font-weight: 700;
+}
+
 .authentication-page .row-one .input-box form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -400,6 +411,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1em;
 }
 
 .authentication-page .row-one .input-box form input {

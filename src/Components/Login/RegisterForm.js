@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {withRouter} from 'react-router-dom'
-import {updateUser} from '../../redux/userReducer'
-import {connect} from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { updateUser } from '../../redux/userReducer'
+import { connect } from 'react-redux'
 
 class RegisterForm extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      firstName: '', 
-      lastName: '', 
-      ranch: '', 
-      email: '', 
+      firstName: '',
+      lastName: '',
+      ranch: '',
+      email: '',
       password: ''
     }
   }
 
   handleUserRegister = (e) => {
     e.preventDefault()
-    const {firstName, lastName, ranch, email, password} = this.state
+    const { firstName, lastName, ranch, email, password } = this.state
     axios
-      .post('/auth/register', {firstName, lastName, ranch, email, password})
+      .post('/auth/register', { firstName, lastName, ranch, email, password })
       .then((res) => {
         this.props.updateUser(res.data)
         this.props.history.push('/dashboard')
@@ -41,9 +41,13 @@ class RegisterForm extends Component {
     })
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className='input-box'>
+        <div className='guest-login-callout'>
+          <h5>If you would like to login as a guest use:</h5>
+          <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+        </div>
         <form onSubmit={this.handleUserRegister}>
           <input
             type='text'
@@ -84,8 +88,8 @@ class RegisterForm extends Component {
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return reduxState
 }
 
-export default withRouter(connect(mapStateToProps, {updateUser})(RegisterForm))
+export default withRouter(connect(mapStateToProps, { updateUser })(RegisterForm))

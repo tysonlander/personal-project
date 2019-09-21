@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { updateUser } from '../../redux/userReducer'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 
 class LoginForm extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       email: '',
@@ -22,8 +22,8 @@ class LoginForm extends Component {
 
   handleUserLogin = (e) => {
     e.preventDefault()
-    const {email, password} = this.state
-    axios.post('/auth/login', {email, password})
+    const { email, password } = this.state
+    axios.post('/auth/login', { email, password })
       .then((res) => {
         this.props.updateUser(res.data) // this send the res data to the state so for this user session
         // console.log(res.data) 
@@ -36,9 +36,13 @@ class LoginForm extends Component {
     e.target.password.value = ''
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className='input-box'>
+        <div className='guest-login-callout'>
+          <h5>If you would like to login as a guest use:</h5>
+          <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+        </div>
         <form onSubmit={this.handleUserLogin}>
           <input
             type='text'
@@ -61,9 +65,9 @@ class LoginForm extends Component {
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return reduxState
 }
 
-export default withRouter(connect(mapStateToProps, {updateUser})(LoginForm))
+export default withRouter(connect(mapStateToProps, { updateUser })(LoginForm))
 
