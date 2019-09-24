@@ -43,46 +43,55 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <div className='input-box'>
-        <div className='guest-login-callout'>
-          <h5>If you would like to login as a guest use:</h5>
-          <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
-        </div>
-        <form onSubmit={this.handleUserRegister}>
-          <input
-            type='text'
-            name='firstName'
-            placeholder='First Name'
-            onChange={this.handleRegisterInfoUpdate}
-          />
-          <input
-            type='text'
-            name='lastName'
-            placeholder='Last Name'
-            onChange={this.handleRegisterInfoUpdate}
-          />
-          <input
-            type='text'
-            name='ranch'
-            placeholder='Your Ranch Name'
-            onChange={this.handleRegisterInfoUpdate}
-          />
-          <input
-            type='text'
-            name='email'
-            placeholder='Email'
-            onChange={this.handleRegisterInfoUpdate}
-          />
-          <input
-            type='password'
-            name='password'
-            placeholder='Password'
-            onChange={this.handleRegisterInfoUpdate}
-          />
-          <button className='butn-primary first-button'>Register</button>
-          <h2 className='paragraph-small'>Already Have an Account?</h2>
-          <button className='butn-secondary' onClick={this.props.handleDisplayLogin}>Login</button>
-        </form>
+      <div className='authentication-page'>
+        {/* <HomeNav/> */}
+
+        <section className='row-one'>
+          <div className='box-title'>
+            <h1 className='title-one'>Register</h1>
+          </div>
+          <div className='input-box'>
+            <div className='guest-login-callout'>
+              <h5>If you would like to login as a guest use:</h5>
+              <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+            </div>
+            <form onSubmit={this.handleUserRegister}>
+              <input
+                type='text'
+                name='firstName'
+                placeholder='First Name'
+                onChange={this.handleRegisterInfoUpdate}
+              />
+              <input
+                type='text'
+                name='lastName'
+                placeholder='Last Name'
+                onChange={this.handleRegisterInfoUpdate}
+              />
+              <input
+                type='text'
+                name='ranch'
+                placeholder='Your Ranch Name'
+                onChange={this.handleRegisterInfoUpdate}
+              />
+              <input
+                type='text'
+                name='email'
+                placeholder='Email'
+                onChange={this.handleRegisterInfoUpdate}
+              />
+              <input
+                type='password'
+                name='password'
+                placeholder='Password'
+                onChange={this.handleRegisterInfoUpdate}
+              />
+              <button className='butn-primary first-button'>Register</button>
+              <h2 className='paragraph-small'>Already Have an Account?</h2>
+              <button className='butn-secondary' onClick={() => { this.props.history.push('/login') }}>Login</button>
+            </form>
+          </div>
+        </section>
       </div>
     )
   }

@@ -38,29 +38,36 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div className='input-box'>
-        <div className='guest-login-callout'>
-          <h5>If you would like to login as a guest use:</h5>
-          <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
-        </div>
-        <form onSubmit={this.handleUserLogin}>
-          <input
-            type='text'
-            name='email'
-            placeholder='Email'
-            onChange={this.handleLoginInfoUpdate}
-          />
-          <input
-            type='password'
-            name='password'
-            placeholder='Password'
-            onChange={this.handleLoginInfoUpdate}
-          />
-          <button className='butn-primary first-button'>Login</button>
-          <h2 className='paragraph-small'>Don't have an account?</h2>
-          <button className='butn-secondary' onClick={this.props.handleDisplayRegister}>Register</button>
-        </form>
-      </div>
+      <div className='authentication-page'>
+        <section className='row-one'>
+          <div className='box-title'>
+            <h1 className='title-one'>Login</h1>
+          </div>
+          <div className='input-box'>
+            <div className='guest-login-callout'>
+              <h5>If you would like to login as a guest use:</h5>
+              <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+            </div>
+            <form onSubmit={this.handleUserLogin}>
+              <input
+                type='text'
+                name='email'
+                placeholder='Email'
+                onChange={this.handleLoginInfoUpdate}
+              />
+              <input
+                type='password'
+                name='password'
+                placeholder='Password'
+                onChange={this.handleLoginInfoUpdate}
+              />
+              <button className='butn-primary first-button'>Login</button>
+              <h2 className='paragraph-small'>Don't have an account?</h2>
+              <button className='butn-secondary' onClick={() => this.props.history.push('/register')}>Register</button>
+            </form>
+          </div>
+        </section>
+      </div >
     )
   }
 }
