@@ -93,6 +93,50 @@ $darkgreyfont: rgb(77, 77, 77);
   }
 }
 
+// In application buttons
+.butn-two-primary {
+  background: $blue;
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: none;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  padding: 8px 35px;
+  margin: 0 1em;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    background: $darkblue;
+    text-decoration: none;
+  }
+}
+
+.butn-two-secondary {
+  background: $lightgrey2;
+  color: #ffffff;
+  font-size: 0.9em;
+  border: 1px solid $lightgrey2;
+  // text-decoration: none;
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  padding: 8px 35px;
+  margin: 0 1em;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    background: $lightgrey1;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 // fonts
 
 .title-one {
@@ -422,6 +466,98 @@ $darkgreyfont: rgb(77, 77, 77);
     }
   }
 }
+
+.add-herd-start {
+  .add-to-herd-block1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    img{
+      margin: 1.5em 0;
+    }
+    select{
+      width: 100%;
+      height: 1.5em;
+      margin-bottom: .75em;
+    }
+    input{
+      width: 100%;
+      height: 1.5em;
+      margin-bottom: .75em;
+    }
+    hr {
+      margin: 1.5em 0;
+    }
+  }
+
+}
+
+.add-to-herd-confirmation {
+  .block-one{
+    text-align: center;
+    hr {
+      margin: 1em 0;
+    }
+  }
+}
+
+.manage-herd{
+  
+  table{
+    margin-top: 3em;
+    thead {
+      background: #fff9f0;
+      border-bottom: 5px solid red;
+      .column1{
+        width: 10vw;
+      }
+      .column2{
+        width: 20vw;
+      }
+      .column3{
+        width: 10vw;
+      }
+      .column4{
+        width: 10vw;
+      }
+      .column5{
+        width: 15vw;
+      }
+      .column6{
+        width: 10vw;
+      }
+    }
+    tbody tr td {
+      // text-align: center;
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      ::placeholder{
+        color: $bluetext;
+      }
+      border-bottom: 1px solid $lightgrey2;
+      .icon {
+        color: $lightgrey1;
+        margin: 0 .5em;
+      }
+    } 
+  }
+  .center-aligned {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+}
+
 
 .business-reports-health {
   display: flex;

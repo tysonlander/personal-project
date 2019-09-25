@@ -1,39 +1,37 @@
-import React, {Component} from 'react'
-import {connect } from 'react-redux'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import CowTableRow from './CowTableRow'
-import {updateLoading} from '../../../redux/loadingReducer'
+import { updateLoading } from '../../../redux/loadingReducer'
 
 
 class HerdManagement extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       cows: []
     }
   }
 
-componentDidMount(){
-  this.handleRopeCows()
-}
+  componentDidMount() {
+    this.handleRopeCows()
+  }
 
-handleRopeCows = () => {
-  this.props.updateLoading({loadStatus: true})  // this isn't working
-  axios.post('/api/cows/', {id: this.props.id})
-  .then(res => {
-    this.setState({
-      cows: res.data
-    })
-  })
-  this.props.updateLoading({loadStatus: false}) // it isn't working
-}
+  handleRopeCows = () => {
+    axios.post('/api/cows/', { id: this.props.id })
+      .then(res => {
+        this.setState({
+          cows: res.data
+        })
+      })
+  }
 
 
-  
-  render(){
+
+  render() {
     let cowList = this.state.cows.map((element, index) => {
-      return(
+      return (
         <CowTableRow cowItem={element}
           key={index}
           handleRopeCows={this.handleRopeCows}
@@ -42,38 +40,42 @@ handleRopeCows = () => {
     })
 
     console.log(this.state.cows)
-    return(
-      <div>
-        {this.props.loadStatus ? (<div><img src='https://cdn.dribbble.com/users/92954/screenshots/4006601/4-cow-3.gif' alt=''/>></div>):(<div></div>)}
+    return (
+      <div className='manage-herd'>
+        {this.props.loadStatus ? (<div><img src='https://cdn.dribbble.com/users/92954/screenshots/4006601/4-cow-3.gif' alt='' />></div>) : (<div></div>)}
         <div className='page-header'>
           <h1>Manage Herd</h1>
           <hr></hr>
-        
         </div>
-          <button><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
-        
-        
-        {/* {mappedCows} */}
+
+        <button className='butn-two-primary'><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        <br />
 
         <table>
           <thead>
-            <tr>
-              <th>RFID</th>
-              <th>Breed</th>
-              <th>Gender</th>
-              <th>Purchase Price</th>
-              <th>Location</th>
-              <th>Action</th>
+            <tr className='table-header'>
+              <th className='column1'>RFID</th>
+              <th className='column2'>Breed</th>
+              <th className='column3'>Gender</th>
+              <th className='column4'>Purchase Price</th>
+              <th className='column5'>Location</th>
+              <th className='column6'>Action</th>
             </tr>
           </thead>
           <tbody>
-              {cowList}
+            {cowList}
           </tbody>
         </table>
-        
+        <br />
+        <hr />
+        <div className='center-aligned'>
+          <button className='butn-two-secondary'><Link to='/dashboard'>Back to Dashboard</Link></button>
+          <button className='butn-two-primary'><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        </div>
+
       </div>
-      
-      )
+
+    )
   }
 }
 
@@ -84,5 +86,5 @@ function mapStateToProps(reduxState) {
   }
 }
 
-export default connect(mapStateToProps, {updateLoading})(HerdManagement)
+export default connect(mapStateToProps, { updateLoading })(HerdManagement)
 

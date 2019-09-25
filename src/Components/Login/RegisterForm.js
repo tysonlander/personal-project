@@ -44,8 +44,6 @@ class RegisterForm extends Component {
   render() {
     return (
       <div className='authentication-page'>
-        {/* <HomeNav/> */}
-
         <section className='row-one'>
           <div className='box-title'>
             <h1 className='title-one'>Register</h1>
@@ -53,7 +51,7 @@ class RegisterForm extends Component {
           <div className='input-box'>
             <div className='guest-login-callout'>
               <h5>If you would like to login as a guest use:</h5>
-              <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+              <h5><span className='bold-title'>EMAIL:</span> awesomerancher@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
             </div>
             <form onSubmit={this.handleUserRegister}>
               <input

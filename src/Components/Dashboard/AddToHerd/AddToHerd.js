@@ -55,60 +55,69 @@ class AddToHerd extends Component {
   render() {
     console.log(this.state.rfid);
     return (
-      <>
+      <section className='add-herd-start'>
         <div className="page-header">
           <h1>Add To Herd</h1>
           <hr />
         </div>
-        <img
-          className="cow-circle-picture"
-          src="https://moolapics.s3-us-west-1.amazonaws.com/sunnycow.jpg"
-          alt=""
-        />
 
-        <h1>Put 'em in the pasture.</h1>
+        <div className='add-to-herd-block1'>
+          <img
+            className="cow-circle-picture"
+            src="https://moolapics.s3-us-west-1.amazonaws.com/sunnycow.jpg"
+            alt=""
+          />
+          <h1>Put 'em in the pasture.</h1>
+          <form onSubmit={this.handleAddCow}>
+            <input
+              type="number"
+              name="rfid"
+              placeholder="rfid"
+              onChange={this.handleCowDetailUpdate}
+            />
+            <br />
+            <select
+              name="breed"
+              placeholder="select breed"
+              onChange={this.handleCowDetailUpdate}
+            >
+              <option>Select Breed</option>
+              <option value="Chocolate">Chocolate</option>
+              <option value="Strawberry">Strawberry</option>
+            </select>
+            <br />
+            <select name="gender" onChange={this.handleCowDetailUpdate}>
+              <option>Select Gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+            <br />
+            <input
+              type="number"
+              name="purchasePrice"
+              placeholder="purchase price"
+              onChange={this.handleCowDetailUpdate}
+            />
+            <br />
+            <input
+              type="text"
+              name="location"
+              placeholder="location"
+              onChange={this.handleCowDetailUpdate}
+            />
 
-        <form onSubmit={this.handleAddCow}>
-          <input
-            type="number"
-            name="rfid"
-            placeholder="rfid"
-            onChange={this.handleCowDetailUpdate}
-          />
-          <select
-            name="breed"
-            placeholder="select breed"
-            onChange={this.handleCowDetailUpdate}
-          >
-            <option>Select Breed</option>
-            <option value="Chocolate">Chocolate</option>
-            <option value="Strawberry">Strawberry</option>
-          </select>
-          <select name="gender" onChange={this.handleCowDetailUpdate}>
-            <option>Select Gender</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-          </select>
-          <input
-            type="number"
-            name="purchasePrice"
-            placeholder="purchase price"
-            onChange={this.handleCowDetailUpdate}
-          />
-          <input
-            type="text"
-            name="location"
-            placeholder="location"
-            onChange={this.handleCowDetailUpdate}
-          />
-
-          <hr />
-          <button type="reset" value="Reset" onClick={this.handleCancel}>
-            Cancel
+            <hr />
+            <button
+              className='butn-two-secondary'
+              type="reset"
+              value="Reset"
+              onClick={this.handleCancel}>
+              Cancel
           </button>
-          <button>Shut the Gate</button>
-        </form>
-      </>
+            <button className='butn-two-primary'>Shut the Gate</button>
+          </form>
+        </div>
+      </section >
     );
   }
 }
@@ -119,7 +128,4 @@ function mapStateToProps(reduxState) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { updateNewCow }
-)(AddToHerd);
+export default connect(mapStateToProps, { updateNewCow })(AddToHerd);

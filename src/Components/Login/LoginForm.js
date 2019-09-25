@@ -46,7 +46,7 @@ class LoginForm extends Component {
           <div className='input-box'>
             <div className='guest-login-callout'>
               <h5>If you would like to login as a guest use:</h5>
-              <h5><span className='bold-title'>EMAIL:</span> awesomeranch9@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
+              <h5><span className='bold-title'>EMAIL:</span> awesomerancher@gmail.com <br /><span className='bold-title'>PASSWORD:</span> t</h5>
             </div>
             <form onSubmit={this.handleUserLogin}>
               <input

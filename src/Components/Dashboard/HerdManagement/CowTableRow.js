@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import * as Icon from 'react-feather'
 import axios from 'axios'
 
 
 class CowTableRow extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       editMode: false,
@@ -15,17 +15,17 @@ class CowTableRow extends Component {
       location: ''
     }
   }
-  
+
   handleDeleteCombo = () => {
     axios
-    .delete(`/api/cow/${this.props.cowItem.id}`)
-    .then(res => {
-      alert(`Cow with RFID# ${this.props.cowItem.rfid}, has been deleted.`)
-      this.props.handleRopeCows()
-    })
-    .catch(err => {
-      if (err) throw err
-    })
+      .delete(`/api/cow/${this.props.cowItem.id}`)
+      .then(res => {
+        alert(`Cow with RFID# ${this.props.cowItem.rfid}, has been deleted.`)
+        this.props.handleRopeCows()
+      })
+      .catch(err => {
+        if (err) throw err
+      })
   }
 
   handleSubmitCowUpdate = () => {
@@ -37,14 +37,14 @@ class CowTableRow extends Component {
       location: this.state.location
     }
     axios
-    .put(`/api/editCow/${this.props.cowItem.id}`, updatedMilkCow)
-    .then(res => {
-      this.handleCancel();
-      this.props.handleRopeCows()
-    })
-    .catch((err) => {
-      if(err) throw err
-    })
+      .put(`/api/editCow/${this.props.cowItem.id}`, updatedMilkCow)
+      .then(res => {
+        this.handleCancel();
+        this.props.handleRopeCows()
+      })
+      .catch((err) => {
+        if (err) throw err
+      })
   }
 
   handleCancel = () => {
@@ -57,7 +57,7 @@ class CowTableRow extends Component {
       location: ''
     })
   }
-  
+
   handleStartEdit = () => {
     this.setState({
       editMode: !this.state.editMode,
@@ -75,64 +75,64 @@ class CowTableRow extends Component {
     })
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <>
-        {this.state.editMode ? 
-        (<>
-        <tr>
-          <td><input 
-            type='number'
-            name='rfid'
-            placeholder={this.props.cowItem.rfid}
-            onChange={this.handleUpdateCowInfo}
-          /></td>
-          <td><input 
-            type='text'
-            name='breed'
-            placeholder={this.props.cowItem.breed}
-            onChange={this.handleUpdateCowInfo}
-          /></td>
-          <td><input 
-            type='text'
-            name='gender'
-            placeholder={this.props.cowItem.gender}
-            onChange={this.handleUpdateCowInfo}
-          /></td>
-          <td><input 
-            type='number'
-            name='purchasePrice'
-            placeholder={this.props.cowItem.purchase_price}
-            onChange={this.handleUpdateCowInfo}
-          /></td>
-          <td><input 
-            type='text'
-            name='location'
-            placeholder={this.props.cowItem.location}
-            onChange={this.handleUpdateCowInfo}
-          /></td>
-        </tr>
-        <td>
-            <Icon.XCircle size={20} onClick={this.handleCancel}/>
-            <Icon.Save size={20} onClick={this.handleSubmitCowUpdate}/>
-          </td>
-        </>
-        ):(
-        <>
-        <tr>
-          <td>{this.props.cowItem.rfid}</td>
-          <td>{this.props.cowItem.breed}</td>
-          <td>{this.props.cowItem.gender}</td>
-          <td>{this.props.cowItem.purchase_price}</td>
-          <td>{this.props.cowItem.location}</td>
-          <td>
-            <Icon.Trash2 size={20} onClick={this.handleDeleteCombo}/>
-            <Icon.Edit3 size={20} onClick={this.handleStartEdit}/>
-          </td>
-        </tr>
-        </>)}
+        {this.state.editMode ?
+          (<>
+            <tr>
+              <td><input
+                type='number'
+                name='rfid'
+                placeholder={this.props.cowItem.rfid}
+                onChange={this.handleUpdateCowInfo}
+              /></td>
+              <td><input
+                type='text'
+                name='breed'
+                placeholder={this.props.cowItem.breed}
+                onChange={this.handleUpdateCowInfo}
+              /></td>
+              <td><input
+                type='text'
+                name='gender'
+                placeholder={this.props.cowItem.gender}
+                onChange={this.handleUpdateCowInfo}
+              /></td>
+              <td><input
+                type='number'
+                name='purchasePrice'
+                placeholder={this.props.cowItem.purchase_price}
+                onChange={this.handleUpdateCowInfo}
+              /></td>
+              <td><input
+                type='text'
+                name='location'
+                placeholder={this.props.cowItem.location}
+                onChange={this.handleUpdateCowInfo}
+              /></td>
+              <td>
+                <Icon.Save className='icon' size={20} onClick={this.handleSubmitCowUpdate} />
+                <Icon.XCircle className='icon' size={20} onClick={this.handleCancel} />
+              </td>
+            </tr>
+          </>
+          ) : (
+            <>
+              <tr>
+                <td>{this.props.cowItem.rfid}</td>
+                <td>{this.props.cowItem.breed}</td>
+                <td>{this.props.cowItem.gender}</td>
+                <td>{this.props.cowItem.purchase_price}</td>
+                <td>{this.props.cowItem.location}</td>
+                <td>
+                  <Icon.Edit3 className='icon' size={20} onClick={this.handleStartEdit} />
+                  <Icon.Trash2 className='icon' size={20} onClick={this.handleDeleteCombo} />
+                </td>
+              </tr>
+            </>)}
 
-        
+
 
 
       </>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import HomeNav from './HomeNav'
 import './Home.css'
 import * as Icon from 'react-feather'
@@ -7,13 +7,13 @@ import * as Icon from 'react-feather'
 class Home extends Component {
 
   handleToRegister = () => {
-    this.props.history.push('/login')
+    this.props.history.push('/register')
   }
-  
-  render(){
-    return(
+
+  render() {
+    return (
       <div className='home-page'>
-        <HomeNav/>
+        <HomeNav />
         <div className='hero-main'>
           <div className='row-one'>
             <div className='box-one'>
@@ -21,16 +21,16 @@ class Home extends Component {
               <button className='butn-secondary-white' onClick={this.handleToRegister}>Register</button>
             </div>
             <div className='box-two'>
-              <img className='box-two-img' src='https://moolapics.s3-us-west-1.amazonaws.com/moola-application-sideview.png' alt=''/>
+              <img className='box-two-img' src='https://moolapics.s3-us-west-1.amazonaws.com/moola-application-sideview.png' alt='' />
             </div>
           </div>
-          <br/>
+          <br />
           <div className='row-two'>
             <h2>Learn More</h2>
-            <Icon.ChevronDown size={30} stroke='#353539'/>
+            <Icon.ChevronDown size={30} stroke='#353539' />
           </div>
         </div>
-        
+
         <section className='section-two'>
           <h2 className='title-mini'>what we're all about</h2>
           <div className='content'>
@@ -44,7 +44,7 @@ class Home extends Component {
             </div>
           </div>
         </section>
-        
+
         <section className='section-three'>
           <div className='quote-box'>
             <p>"They really do put the moo in the moola. This has made my farm more profitable and has really simplified my dairy farm"</p>
@@ -75,7 +75,7 @@ class Home extends Component {
         </section>
 
         <footer className='home-footer'>
-          <p className='paragraph-small'>Looking to hire the amazing, talented, and super cool dev who created this? <br/>Reach out: TysonLander@gmail.com</p>
+          <p className='paragraph-small'>Looking to hire the amazing, talented, and super cool dev who created this? <br />Reach out: TysonLander@gmail.com</p>
           <p className='paragraph-small'>No cows were harmed in the making of this coding project.</p>
         </footer>
 
@@ -84,7 +84,7 @@ class Home extends Component {
 
 
 
-          {/* https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg
+        {/* https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg
           https://moolapics.s3-us-west-1.amazonaws.com/hellocow.jpg
           https://moolapics.s3-us-west-1.amazonaws.com/sunnycow.jpg */}
 
