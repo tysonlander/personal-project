@@ -1,27 +1,33 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import * as Icon from 'react-feather'
 
-class HealthSettingConfirm extends Component{
-  
+class HealthSettingConfirm extends Component {
+
   handleBack = () => {
     this.props.history.push('/dashboard')
   }
-  
-  render(){
-    return(
-      <>
+
+  render() {
+    return (
+      <div className='health-settings-conf'>
         <div className='page-header'>
           <h1>Health Settings</h1>
           <hr></hr>
         </div>
 
-        <h4>image</h4>
-       <p>Your health flags to watch have been set!</p>
+        <div className='row-a'>
+          <Icon.CheckSquare size={100} stroke='#f88379' className='heart-icon' />
+          <h4>Your health flags have been set!</h4>
+        </div>
 
-       <div className='page-header'>
-        <hr></hr>
-        <button onClick={this.handleBack}>Back to Dashboard</button>
-       </div>
-      </>
+        <div className='bottom-row'>
+          <hr></hr>
+          <div className='center-aligned-2butn'>
+            <button className='butn-two-primary' onClick={this.handleBack}>Back to Dashboard</button>
+
+          </div>
+        </div>
+      </div>
     )
   }
 }

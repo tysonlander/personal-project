@@ -46,7 +46,6 @@ class HerdHealthMetrics extends Component {
       dateRange.push(herdHealthData[i].date.substring(5, 10));
     }
 
-    console.log("milk array", dateRange);
     return (
       <div>
         {/* sleep vs milk graphed */}
@@ -404,6 +403,7 @@ class HerdHealthMetrics extends Component {
             />
           </div>
         </div>
+        <h4>Didn't see a report you were looking for? Contact us.</h4>
       </div>
     );
   }

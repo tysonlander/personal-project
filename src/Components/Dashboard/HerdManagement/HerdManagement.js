@@ -27,8 +27,6 @@ class HerdManagement extends Component {
       })
   }
 
-
-
   render() {
     let cowList = this.state.cows.map((element, index) => {
       return (
@@ -38,8 +36,6 @@ class HerdManagement extends Component {
         />
       )
     })
-
-    console.log(this.state.cows)
     return (
       <div className='manage-herd'>
         {this.props.loadStatus ? (<div><img src='https://cdn.dribbble.com/users/92954/screenshots/4006601/4-cow-3.gif' alt='' />></div>) : (<div></div>)}
@@ -48,8 +44,10 @@ class HerdManagement extends Component {
           <hr></hr>
         </div>
 
-        <button className='butn-two-primary'><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
-        <br />
+        <div className='box-one'>
+          <button className='butn-two-primary'><Link to='/dashboard/AddToHerd'>Add Cow</Link></button>
+        </div>
+
 
         <table>
           <thead>

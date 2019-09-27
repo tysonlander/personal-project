@@ -8,6 +8,7 @@ import CowsStepAlert from "./CowsStepAlert/CowsStepAlert";
 import CowsStressAlert from "./CowsStressAlert/CowsStressAlert";
 import CowsTempAlert from "./CowsTempAlert/CowsTempAlert";
 import CowsMilkAlert from "./CowsMilkAlert/CowsMilkAlert";
+import * as Icon from 'react-feather'
 
 class Health extends Component {
   componentDidMount() {
@@ -31,7 +32,8 @@ class Health extends Component {
           <h1>Health</h1>
           <hr />
         </div>
-
+        <Icon.Activity size={100} stroke='#f8d568' className='heart-icon' />
+        {/* <img src='https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg' alt='' /> */}
         <HerdHealthMetrics />
         <CowsSleepAlert ydaDate={date} />
         <CowsStepAlert ydaDate={date} />
