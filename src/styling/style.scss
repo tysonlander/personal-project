@@ -634,6 +634,55 @@ $darkgreyfont: rgb(77, 77, 77);
   }
 }
 
+.health-alerts {
+  .row-a {
+    display: flex;
+    justify-content: center;
+    margin: 1.5em;
+  }
+  .alert-container{
+    background: #fff9f0;
+    border-radius: $roundcorner;
+    border: 2px solid #fff0d7;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 1.5em 0;
+    h3 {
+      margin: 0;
+    }
+    h5 {
+      margin: 0;
+      font-weight: 400;
+    }
+    .span-a {
+      margin-left: 1em;
+      a {
+        color: $lightgrey2;
+        text-decoration: none;
+      }
+    }
+    table{
+      margin-top: 1em;
+      thead{
+        // color: $darkblue;
+        // background: $lightgrey2;
+        border-bottom: 5px solid red;
+        .column1{
+          width: 15vw;
+        }
+        .column2{
+          width: 10vw;
+        }
+        .column3{
+          width: 10vw;
+        }
+        .column4{
+          width: 5vw;
+        }
+      }
+    }
+  }
+}
 
 .business-reports-health {
   display: flex;

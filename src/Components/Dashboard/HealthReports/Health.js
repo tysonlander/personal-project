@@ -27,12 +27,14 @@ class Health extends Component {
   render() {
     let date = "2019-05-31";
     return (
-      <div>
+      <div className='health-alerts'>
         <div className="page-header">
           <h1>Health</h1>
           <hr />
         </div>
-        <Icon.Activity size={100} stroke='#f8d568' className='heart-icon' />
+        <div className='row-a'>
+          <Icon.Activity size={100} stroke='#f88379' className='heart-icon' />
+        </div>
         {/* <img src='https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg' alt='' /> */}
         <HerdHealthMetrics />
         <CowsSleepAlert ydaDate={date} />

@@ -785,6 +785,68 @@
   margin: 1.5em 0;
 }
 
+.health-alerts .row-a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1.5em;
+}
+
+.health-alerts .alert-container {
+  background: #fff9f0;
+  border-radius: 0.3em;
+  border: 2px solid #fff0d7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+.health-alerts .alert-container h3 {
+  margin: 0;
+}
+
+.health-alerts .alert-container h5 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.health-alerts .alert-container .span-a {
+  margin-left: 1em;
+}
+
+.health-alerts .alert-container .span-a a {
+  color: #727272;
+  text-decoration: none;
+}
+
+.health-alerts .alert-container table {
+  margin-top: 1em;
+}
+
+.health-alerts .alert-container table thead {
+  border-bottom: 5px solid red;
+}
+
+.health-alerts .alert-container table thead .column1 {
+  width: 15vw;
+}
+
+.health-alerts .alert-container table thead .column2 {
+  width: 10vw;
+}
+
+.health-alerts .alert-container table thead .column3 {
+  width: 10vw;
+}
+
+.health-alerts .alert-container table thead .column4 {
+  width: 5vw;
+}
+
 .business-reports-health {
   display: -webkit-box;
   display: -ms-flexbox;
