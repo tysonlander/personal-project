@@ -1,74 +1,74 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import CowTempTableRow from './CowsTempTableRow'
+import * as Icon from 'react-feather'
 
-class CowsTempAlert extends Component{
-  constructor(){
+class CowsTempAlert extends Component {
+  constructor() {
     super()
     this.state = {
       cowsHighTemp: []
     }
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     this.getCowsHighTemp()
   }
 
-  getCowsHighTemp(){
+  getCowsHighTemp() {
     axios
-    .get(`/api/cowsHighTemp/${this.props.id}?tempFlag=${this.props.tempFlag}&ydaDate=${this.props.ydaDate}`)
-    .then((res) => {
-      this.setState({
-        cowsHighTemp: res.data
+      .get(`/api/cowsHighTemp/${this.props.id}?tempFlag=${this.props.tempFlag}&ydaDate=${this.props.ydaDate}`)
+      .then((res) => {
+        this.setState({
+          cowsHighTemp: res.data
+        })
       })
-    })
-    .catch((err) => 
-      {if(err) throw err}
-    )
+      .catch((err) => { if (err) throw err }
+      )
   }
 
-  render(){
+  render() {
     let cowList = this.state.cowsHighTemp.map((element, index) => {
-      return(
+      return (
         <CowTempTableRow
           cow={element}
           key={index}
-          
+
         />
       )
     })
 
-    return(
-      <div>
-        <h3>Temperature above {this.props.tempFlag}<span><Link to='/dashboard/HealthSettings'>edit</Link></span></h3>
+    return (
+      <div className='alert-container'>
+        <h3>Temperature</h3>
+        <hr />
 
-        {/* <h1>{this.props.id}</h1>
-        <h1>Sleep Flag {this.props.sleepFlag}</h1>
-        <h1>{this.props.ydaDate}</h1> */}
-        
+        <h5><Icon.AlertCircle size={20} stroke='#f88379' className='heart-icon' />Temperature above {this.props.tempFlag}<span className='span-a'><Link to='/dashboard/HealthSettings'><Icon.Edit3 className='icon' size={20} /></Link></span></h5>
+
+
         <div>
-        <table>
-          <thead>
-            <tr>
-              <th>RFID</th>
-              <th>Milk (lbs)</th>
-              <th>Temperature</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cowList}
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                <th className='column1'>RFID</th>
+                <th className='column2'>Milk (lbs)</th>
+                <th className='column3'>Temperature</th>
+                <th className='column4'>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cowList}
+            </tbody>
+          </table>
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return {
     id: reduxState.user.id,
     // milk: reduxState.healthFlags.milk,

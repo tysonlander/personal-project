@@ -32,16 +32,21 @@ class Health extends Component {
           <h1>Health</h1>
           <hr />
         </div>
+
+
         <div className='row-a'>
-          <Icon.Activity size={100} stroke='#f88379' className='heart-icon' />
+          {/* <Icon.Activity size={100} stroke='#f88379' className='heart-icon' /> */}
         </div>
-        {/* <img src='https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg' alt='' /> */}
-        <HerdHealthMetrics />
-        <CowsSleepAlert ydaDate={date} />
-        <CowsStepAlert ydaDate={date} />
-        <CowsStressAlert ydaDate={date} />
-        <CowsTempAlert ydaDate={date} />
-        <CowsMilkAlert ydaDate={date} />
+
+        <div className='main-container'>
+          {/* <img src='https://moolapics.s3-us-west-1.amazonaws.com/nosepicker.jpg' alt='' /> */}
+          <HerdHealthMetrics />
+          <CowsSleepAlert ydaDate={date} />
+          <CowsStepAlert ydaDate={date} />
+          <CowsStressAlert ydaDate={date} />
+          <CowsTempAlert ydaDate={date} />
+          <CowsMilkAlert ydaDate={date} />
+        </div>
       </div>
     );
   }

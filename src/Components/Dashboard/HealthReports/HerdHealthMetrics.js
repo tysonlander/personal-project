@@ -1,41 +1,40 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import axios from 'axios'
 
 class HerdHealthMetrics extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       herdHealthData: []
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getHerdHealth();
   }
 
-  getHerdHealth(){
+  getHerdHealth() {
     axios
-    .get(`/api/avgHerdHealth/${this.props.id}`)
-    .then((res) => {
-      this.setState({
-        herdHealthData: res.data
+      .get(`/api/avgHerdHealth/${this.props.id}`)
+      .then((res) => {
+        this.setState({
+          herdHealthData: res.data
+        })
       })
-    })
-    .catch((err) => 
-      {if(err) throw err}
-    )
+      .catch((err) => { if (err) throw err }
+      )
   }
 
-  render(){
+  render() {
     let ydaAvgMilk = 0
     let ydaAvgSleep = 0
     let ydaAvgSteps = 0
     let ydaAvgStress = 0
     let ydaAvgTemp = 0
     let dataDate = ''
-    const {herdHealthData} = this.state
-    if(herdHealthData.length !== 0){
+    const { herdHealthData } = this.state
+    if (herdHealthData.length !== 0) {
       ydaAvgMilk = Number(herdHealthData[0].avgMilk)
       ydaAvgSleep = Number(herdHealthData[0].avgSleep)
       ydaAvgSteps = Number(herdHealthData[0].avgSteps)
@@ -44,12 +43,12 @@ class HerdHealthMetrics extends Component {
       dataDate = herdHealthData[0].date.substring(5, 10)
     }
 
-    return(
-      <div>
-        <h3>Average Herd Health Metrics ({dataDate})</h3>
+    return (
+      <div className='keystats-container'>
+        <h3>Yesterday's Average Herd Health ({dataDate})</h3>
         <table>
           <thead>
-            <tr>
+            <tr className='top-of-table'>
               <th>Sleep</th>
               <th>Steps</th>
               <th>Stress</th>
@@ -72,7 +71,7 @@ class HerdHealthMetrics extends Component {
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return {
     id: reduxState.user.id
   }

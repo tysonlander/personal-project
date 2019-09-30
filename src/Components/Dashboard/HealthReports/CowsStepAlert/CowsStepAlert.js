@@ -1,74 +1,76 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import CowsStepTableRow from './CowsStepTableRow'
+import * as Icon from 'react-feather'
 
-class CowsStepAlert extends Component{
-  constructor(){
+class CowsStepAlert extends Component {
+  constructor() {
     super()
     this.state = {
       cowsLowSteps: []
     }
   }
-  
-  componentDidMount(){
+
+  componentDidMount() {
     this.getCowsNotStepping()
   }
 
-  getCowsNotStepping(){
+  getCowsNotStepping() {
     axios
-    .get(`/api/cowsLowSteps/${this.props.id}?stepFlag=${this.props.stepFlag}&ydaDate=${this.props.ydaDate}`)
-    .then((res) => {
-      this.setState({
-        cowsLowSteps: res.data
+      .get(`/api/cowsLowSteps/${this.props.id}?stepFlag=${this.props.stepFlag}&ydaDate=${this.props.ydaDate}`)
+      .then((res) => {
+        this.setState({
+          cowsLowSteps: res.data
+        })
       })
-    })
-    .catch((err) => 
-      {if(err) throw err}
-    )
+      .catch((err) => { if (err) throw err }
+      )
   }
 
-  render(){
+  render() {
     let cowList = this.state.cowsLowSteps.map((element, index) => {
-      return(
+      return (
         <CowsStepTableRow
           cow={element}
           key={index}
-          
+
         />
       )
     })
 
-    return(
-      <div>
-        <h3>Steps under {this.props.stepFlag}/day <span><Link to='/dashboard/HealthSettings'>edit</Link></span></h3>
+    return (
+      <div className='alert-container'>
+        <h3>Steps</h3>
+        <hr />
+        <h5><Icon.AlertCircle size={20} stroke='#f88379' className='heart-icon' />Steps under {this.props.stepFlag} / day<span className='span-a'><Link to='/dashboard/HealthSettings'><Icon.Edit3 className='icon' size={20} /></Link></span></h5>
 
         {/* <h1>{this.props.id}</h1>
         <h1>Sleep Flag {this.props.sleepFlag}</h1>
         <h1>{this.props.ydaDate}</h1> */}
-        
+
         <div>
-        <table>
-          <thead>
-            <tr>
-              <th>RFID</th>
-              <th>Milk (lbs)</th>
-              <th>Steps</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cowList}
-          </tbody>
-        </table>
+          <table>
+            <thead>
+              <tr>
+                <th className='column1'>RFID</th>
+                <th className='column2'>Milk (lbs)</th>
+                <th className='column3'>Steps</th>
+                <th className='column4'>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cowList}
+            </tbody>
+          </table>
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
   return {
     id: reduxState.user.id,
     // milk: reduxState.healthFlags.milk,

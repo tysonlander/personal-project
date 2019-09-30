@@ -45,13 +45,9 @@ class CowSleepAlert extends Component {
 
     return (
       <div className='alert-container'>
-        <h3>Sleep Alert</h3>
+        <h3>Sleep</h3>
         <hr />
         <h5><Icon.AlertCircle size={20} stroke='#f88379' className='heart-icon' />Cows Sleeping Less Than {this.props.sleepFlag} min / day<span className='span-a'><Link to='/dashboard/HealthSettings'><Icon.Edit3 className='icon' size={20} /></Link></span></h5>
-
-        {/* <h1>{this.props.id}</h1>
-        <h1>Sleep Flag {this.props.sleepFlag}</h1>
-        <h1>{this.props.ydaDate}</h1> */}
 
         <div>
           <table>
@@ -60,7 +56,7 @@ class CowSleepAlert extends Component {
                 <th className='column1'>RFID</th>
                 <th className='column2'>Milk (lbs)</th>
                 <th className='column3'>Sleep (min)</th>
-                <th className='column4'>Actions</th>
+                <th className='column4'>Action</th>
               </tr>
             </thead>
             <tbody>

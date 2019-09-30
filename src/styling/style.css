@@ -795,56 +795,116 @@
   margin: 1.5em;
 }
 
-.health-alerts .alert-container {
+.health-alerts .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.health-alerts .main-container .keystats-container {
+  margin: 1em 0;
+  background: #edf9f7;
+  border-radius: 0.3em;
+  border: 2px solid #c2eee6;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.health-alerts .main-container .keystats-container h3 {
+  margin: 0.5em;
+}
+
+.health-alerts .main-container .keystats-container th {
+  width: 7vw;
+  color: #2ad2c3;
+  font-size: 1.2em;
+  border-bottom: 2px solid #2ad2c3;
+  padding: 1px 0;
+}
+
+.health-alerts .main-container .keystats-container td {
+  text-align: center;
+}
+
+.health-alerts .main-container .alert-container {
   background: #fff9f0;
   border-radius: 0.3em;
   border: 2px solid #fff0d7;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1em;
-  margin: 1.5em 0;
+  margin: 1em 0;
+  width: 50vw;
 }
 
-.health-alerts .alert-container h3 {
+.health-alerts .main-container .alert-container h3 {
   margin: 0;
 }
 
-.health-alerts .alert-container h5 {
+.health-alerts .main-container .alert-container h5 {
   margin: 0;
   font-weight: 400;
 }
 
-.health-alerts .alert-container .span-a {
+.health-alerts .main-container .alert-container .span-a {
   margin-left: 1em;
 }
 
-.health-alerts .alert-container .span-a a {
-  color: #727272;
+.health-alerts .main-container .alert-container .span-a a {
+  color: #4d4d4d;
   text-decoration: none;
 }
 
-.health-alerts .alert-container table {
+.health-alerts .main-container .alert-container table {
   margin-top: 1em;
+  border-collapse: collapse;
 }
 
-.health-alerts .alert-container table thead {
-  border-bottom: 5px solid red;
+.health-alerts .main-container .alert-container table thead {
+  text-align: left;
 }
 
-.health-alerts .alert-container table thead .column1 {
+.health-alerts .main-container .alert-container table thead .column1 {
   width: 15vw;
 }
 
-.health-alerts .alert-container table thead .column2 {
+.health-alerts .main-container .alert-container table thead .column2 {
   width: 10vw;
 }
 
-.health-alerts .alert-container table thead .column3 {
+.health-alerts .main-container .alert-container table thead .column3 {
   width: 10vw;
 }
 
-.health-alerts .alert-container table thead .column4 {
-  width: 5vw;
+.health-alerts .main-container .alert-container table thead .column4 {
+  width: 10vw;
+}
+
+.health-alerts .main-container .alert-container table tbody tr a {
+  color: #000;
+}
+
+.health-alerts .main-container .alert-container table tbody tr:nth-child(odd) {
+  background: #fff0d742;
 }
 
 .business-reports-health {
@@ -867,5 +927,77 @@
   background: #fbfafa;
   border: 1px solid #eaeaea;
   border-radius: 0.3em;
+}
+
+.individual-health-report .row-a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1em 0;
+}
+
+.individual-health-report .row-a .health-snapshot {
+  background: #fff9f0;
+  border-radius: 0.3em;
+  border: 2px solid #fff0d7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em;
+  margin: 1em 0;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.individual-health-report .row-a .health-snapshot h3 {
+  margin: .1em 0;
+}
+
+.individual-health-report .row-a .health-snapshot thead tr th {
+  text-align: left;
+}
+
+.individual-health-report .row-a .heart-overview {
+  width: 35%;
+  background: #fff6f6;
+  border: 2px solid #f1a0a08e;
+}
+
+.individual-health-report .center-text {
+  text-align: center;
+}
+
+.individual-health-report .charts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.individual-health-report .charts-container div {
+  margin: 1em 0;
+}
+
+.individual-health-report .closing-hr {
+  margin: 1em;
 }
 /*# sourceMappingURL=style.css.map */
