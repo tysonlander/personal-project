@@ -467,7 +467,7 @@ class CowFullHealthRep extends Component {
 
         <hr className='closing-hr' />
         <div className='center-aligned-2butn'>
-          <button className='butn-two-secondary' onClick={() => { this.props.history.push('/dashboard/Health') }}>Back to Dashboard</button>
+          <button className='butn-two-secondary' onClick={() => { this.props.history.push('/dashboard') }}>Back to Dashboard</button>
           <button className='butn-two-primary' onClick={() => { this.props.history.push('/dashboard/Health') }}>Back</button>
         </div>
       </div>
