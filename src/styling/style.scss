@@ -736,6 +736,27 @@ $darkgreyfont: rgb(77, 77, 77);
   }
 }
 
+.messages-page{
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em 0;
+    .online-users {
+      width: 35%;
+    }
+    .chat-area{
+      width: 60%;
+    }
+    form {
+      .form-control {
+        width: 100%;
+        height: 5em;
+        margin: 1em 0;
+      }
+    }
+  }
+}
+
 .individual-health-report {
   .row-a{
     display: flex;

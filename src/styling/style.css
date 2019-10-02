@@ -929,6 +929,30 @@
   border-radius: 0.3em;
 }
 
+.messages-page .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1.5em 0;
+}
+
+.messages-page .container .online-users {
+  width: 35%;
+}
+
+.messages-page .container .chat-area {
+  width: 60%;
+}
+
+.messages-page .container form .form-control {
+  width: 100%;
+  height: 5em;
+  margin: 1em 0;
+}
+
 .individual-health-report .row-a {
   display: -webkit-box;
   display: -ms-flexbox;

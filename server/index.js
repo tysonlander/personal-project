@@ -1,81 +1,53 @@
 require('dotenv').config()
 const express = require('express'),
-      session = require('express-session'),
-      massive = require('massive'),
-      http = require('http'),
-      auth_ctrl = require('./controllers/auth_controllers'),
-      ranch_ctrl = require('./controllers/ranch_controllers'),
-      stat_ctrl = require('./controllers/cow_stat_controllers'),
-      flag_cows_ctrl = require('./controllers/flag_cows_controllers')
+  session = require('express-session'),
+  massive = require('massive'),
+  http = require('http'),
+  auth_ctrl = require('./controllers/auth_controllers'),
+  ranch_ctrl = require('./controllers/ranch_controllers'),
+  stat_ctrl = require('./controllers/cow_stat_controllers'),
+  flag_cows_ctrl = require('./controllers/flag_cows_controllers')
 const app = express()
 const server = http.createServer(app)
 
 
-////////////////////////////////////// socket io setup
-// const io = require('socket.io')(server) 
-// const users = [];
-// const connections = [];
-
-// io.sockets.on('connection', function(socket){
-//   connections.push(socket);
-
-//   //Disconnect
-//   socket.on('disconnect', function(data){
-//     connections.splice(connections.indexOf(socket), 1)
-//     console.log('Disconnected: %s sockets connected', connections.length);
-//   })
-
-//   //Send Message
-//   socket.on('send message', function(data){
-//     io.sockets.emit('new message', {msg: data}); 
-//   })
-
-//   socket.on('error', function(err){
-//     console.log(err)
-//   });
-  
-// })
-///////////////////////// end of socket io setup
-
-//// start of socket test
-const io = require('socket.io')(server) 
+// Socket Setup
+const io = require('socket.io')(server)
 const users = [];
 const connections = [];
 
-io.sockets.on('connection', function(socket){
+io.sockets.on('connection', function (socket) {
   connections.push(socket);
 
   // set id for user
-  socket.emit('welcome', {userID: socket.id})
+  socket.emit('welcome', { userID: socket.id })
 
   //Disconnect
-  socket.on('disconnect', function(data){
+  socket.on('disconnect', function (data) {
     connections.splice(connections.indexOf(socket), 1)
     console.log('Disconnected: %s sockets connected', connections.length);
   })
 
   //Send Message
-  socket.on('message sent', function(data){
-    console.log(data)
+  socket.on('message sent', function (data) {
     data.user = this.id
-    io.sockets.emit('new message', data); 
+    io.sockets.emit('new message', data);
   })
 
-  socket.on('error', function(err){
+  socket.on('error', function (err) {
     console.log(err)
   });
-  
 })
 
-///// end of socket test 
+///// end of socket
 
-const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
+const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env
 
 app.use(express.json())
-app.use( express.static( `${__dirname}/../build` ) );
+app.use(express.static(`${__dirname}/../build`));
 app.use(session({
   secret: SESSION_SECRET,
-  saveUninitialized: false, 
+  saveUninitialized: false,
   resave: false,
   cookie: {
     maxAge: 1000 * 60 * 60
